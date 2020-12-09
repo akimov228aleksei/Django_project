@@ -1,6 +1,6 @@
-#Employee management
+# Employee management
 
-####Vision
+#### Vision
 
 Employee Management is a web based 
 application for managing employees and 
@@ -19,8 +19,9 @@ departments.
     - Show which department the employee belongs to
 
 
-####1. Employees 
-#####1.1 Show employee list 
+#### 1. Employees 
+
+##### 1.1 Show employee list 
 
 The mode is intended for displaying the list of employees, their salaries and department
 
@@ -42,7 +43,7 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Date - date of hiring
     
-#####1.2 Add employee
+##### 1.2 Add employee
 
 ***Main scenario:***
 
@@ -80,7 +81,7 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Date - date of hiring
     
-#####1.3 Edit list of employees
+##### 1.3 Edit list of employees
 ***Main scenario:***
 
     - User clicks the “Edit” button in the employee list view mode
@@ -131,7 +132,7 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Date - date of addition to the employee in dd / mm / yyyy format
     
-#####1.4 Removing the employee
+##### 1.4 Removing the employee
 
 ***Main scenario:***
 
@@ -158,11 +159,11 @@ The mode is intended for displaying the list of employees, their salaries and de
     - List of employees without changes is displaying.
     
   
-####2. Department 
+#### 2. Department 
 
 This mode is intended for viewing the list of departments, the number of employees and the average salary.
 
-#####2.1 Display list of Clients
+##### 2.1 Display list of Clients
 
 ***Main scenario:***
 
@@ -177,7 +178,7 @@ This mode is intended for viewing the list of departments, the number of employe
     
     - Amount - number of employees in the department
 
-#####2.2 Add department
+##### 2.2 Add department
 
 ***Main scenario:***
 
@@ -213,7 +214,7 @@ This mode is intended for viewing the list of departments, the number of employe
   
 After creating a new department, the average salary and the number of employees become 0
 
-#####2.3 Edit department
+##### 2.3 Edit department
 
 ***Main scenario:***
 
@@ -241,7 +242,7 @@ After creating a new department, the average salary and the number of employees 
     
     - Data don’t save in data base, then list of clients records is displaying to user
     
-#####2.4 Removing department 
+##### 2.4 Removing department 
 
 ***Main scenario:***
     
