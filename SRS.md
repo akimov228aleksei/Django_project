@@ -19,9 +19,123 @@ departments.
     - Show which department the employee belongs to
 
 
-#### 1. Employees 
 
-##### 1.1 Show employee list 
+    
+  
+#### 1. Department 
+
+This mode is intended for viewing the list of departments, the number of employees and the average salary.
+
+##### 1.1 Display list of Clients
+
+***Main scenario:***
+
+     - User selects item “Department”;
+     - Application displays list of departments
+   
+***The list displays the following columns:***
+
+    - Department - name of department
+    
+    - Salary - average salary by department
+    
+    - Amount - number of employees in the department
+
+##### 1.2 Add department
+
+***Main scenario:***
+
+    - User clicks the "Add" button in the department list view mode
+    
+    - Application displays form to enter department data
+    
+    - User enter department data and presses "Save" button
+    
+    - If any data is entered incorrectly, incorrect data messages are displayed
+    
+    - If entered data is valid, then record is adding to database
+    
+    - If error occurs, then error message is displaying
+    
+    - If new department record is successfully added, then list of clients with added records is displaying
+    
+***Cancel operation scenario:***
+
+    - User clicks the "Add" button in the department list view mode
+    
+    - Application displays form to enter department data
+  
+    - User enter department data and presses "Cancel" button
+    
+    - Data don’t save in data base, then list of department records is displaying to user
+    
+***When adding a department, the following details are entered:***
+
+    - Name - name of department
+    
+***Constraints for data validation:***
+  
+After creating a new department, the average salary and the number of employees become 0
+
+##### 1.3 Edit department
+
+***Main scenario:***
+
+    - User clicks the “Edit” button in the department list view mode
+    
+    - Application displays form to enter department data
+    
+    - User enters depatments data and presses “Save” button
+    
+    - If any data is entered incorrectly, incorrect data messages are displayed
+    
+    - If entered data is valid, then edited data is added to database
+    
+    - If error occurs, then error message is displaying
+    
+    - If the department record has been edited successfully, a list of departments with the added records is displayed
+    
+***Cancel operation scenario***
+
+    - User clicks the “Edit” button in the departments list view mode
+    
+    - Application displays form to enter department data
+    
+    - User enters departments data and presses “Cancel” button
+    
+    - Data don’t save in data base, then list of clients records is displaying to user
+    
+##### 1.4 Removing department 
+
+***Main scenario:***
+    
+    -  The user, while in the list of departments mode, presses the "Delete" button in the selected department line
+
+    - Application displays confirmation dialog “Please confirm delete department?”
+    
+    - The user confirms the removal of the department
+    
+    - Record is deleted from database
+    
+    - If error occurs, then error message displays
+    
+    - If department record is successfully deleted, then list of department without deleted records is displaying
+    
+***Cancel operation scenario:***
+
+    - User is in display mode of department list and press “Delete” button
+    
+    - Application displays confirmation dialog “Please confirm delete department?”
+    
+    - User press “Cancel” button
+    
+    - List of departments without changes is displaying
+    
+    
+    
+#### 2. Employees 
+
+##### 2.1 Show employee list 
 
 The mode is intended for displaying the list of employees, their salaries and department
 
@@ -43,7 +157,7 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Date - date of hiring
     
-##### 1.2 Add employee
+##### 2.2 Add employee
 
 ***Main scenario:***
 
@@ -81,7 +195,7 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Date - date of hiring
     
-##### 1.3 Edit list of employees
+##### 2.3 Edit list of employees
 ***Main scenario:***
 
     - User clicks the “Edit” button in the employee list view mode
@@ -132,7 +246,7 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Date - date of addition to the employee in dd / mm / yyyy format
     
-##### 1.4 Removing the employee
+##### 2.4 Removing the employee
 
 ***Main scenario:***
 
@@ -157,113 +271,3 @@ The mode is intended for displaying the list of employees, their salaries and de
     - User press “Cancel” button;
   
     - List of employees without changes is displaying.
-    
-  
-#### 2. Department 
-
-This mode is intended for viewing the list of departments, the number of employees and the average salary.
-
-##### 2.1 Display list of Clients
-
-***Main scenario:***
-
-     - User selects item “Department”;
-     - Application displays list of departments
-   
-***The list displays the following columns:***
-
-    - Department - name of department
-    
-    - Salary - average salary by department
-    
-    - Amount - number of employees in the department
-
-##### 2.2 Add department
-
-***Main scenario:***
-
-    - User clicks the "Add" button in the department list view mode
-    
-    - Application displays form to enter department data
-    
-    - User enter department data and presses "Save" button
-    
-    - If any data is entered incorrectly, incorrect data messages are displayed
-    
-    - If entered data is valid, then record is adding to database
-    
-    - If error occurs, then error message is displaying
-    
-    - If new department record is successfully added, then list of clients with added records is displaying
-    
-***Cancel operation scenario:***
-
-    - User clicks the "Add" button in the department list view mode
-    
-    - Application displays form to enter department data
-  
-    - User enter department data and presses "Cancel" button
-    
-    - Data don’t save in data base, then list of department records is displaying to user
-    
-***When adding a department, the following details are entered:***
-
-    - Name - name of department
-    
-***Constraints for data validation:***
-  
-After creating a new department, the average salary and the number of employees become 0
-
-##### 2.3 Edit department
-
-***Main scenario:***
-
-    - User clicks the “Edit” button in the department list view mode
-    
-    - Application displays form to enter department data
-    
-    - User enters depatments data and presses “Save” button
-    
-    - If any data is entered incorrectly, incorrect data messages are displayed
-    
-    - If entered data is valid, then edited data is added to database
-    
-    - If error occurs, then error message is displaying
-    
-    - If the department record has been edited successfully, a list of departments with the added records is displayed
-    
-***Cancel operation scenario***
-
-    - User clicks the “Edit” button in the departments list view mode
-    
-    - Application displays form to enter department data
-    
-    - User enters departments data and presses “Cancel” button
-    
-    - Data don’t save in data base, then list of clients records is displaying to user
-    
-##### 2.4 Removing department 
-
-***Main scenario:***
-    
-    -  The user, while in the list of departments mode, presses the "Delete" button in the selected department line
-
-    - Application displays confirmation dialog “Please confirm delete department?”
-    
-    - The user confirms the removal of the department
-    
-    - Record is deleted from database
-    
-    - If error occurs, then error message displays
-    
-    - If department record is successfully deleted, then list of department without deleted records is displaying
-    
-***Cancel operation scenario:***
-
-    - User is in display mode of department list and press “Delete” button
-    
-    - Application displays confirmation dialog “Please confirm delete department?”
-    
-    - User press “Cancel” button
-    
-    - List of departments without changes is displaying
