@@ -3,8 +3,8 @@
 #### Vision
 
 Employee Management is a web based 
-application for managing employees and 
-departments.
+application for managing employees,
+departments and vacation
 
 **Application should provide:** 
 
@@ -121,6 +121,8 @@ After creating a new department, the average salary and the number of employees 
     
     - If department record is successfully deleted, then list of department without deleted records is displaying
     
+    - If there were people in this department, then they receive the mark "No department"
+    
 ***Cancel operation scenario:***
 
     - User is in display mode of department list and press “Delete” button
@@ -135,7 +137,7 @@ After creating a new department, the average salary and the number of employees 
     
 #### 2. Employees 
 
-##### 2.1 Show employee list 
+##### 2.1 Display list if employee 
 
 The mode is intended for displaying the list of employees, their salaries and department
 
@@ -271,3 +273,123 @@ The mode is intended for displaying the list of employees, their salaries and de
     - User press “Cancel” button;
   
     - List of employees without changes is displaying.
+    
+    
+    
+#### 3. Vacation
+
+##### 3.1 Display vacation list
+
+This mode is intended for viewing employees on vacation, deleting and editing the vacation date
+
+**Main scenario:** 
+
+    - User select item "Vacation"
+    
+    - Application display vacation list
+    
+**This list displays the following columns:**
+
+    - Employee - employee name
+    
+    - Start - vacation start
+    
+    - End - end of vacation
+    
+##### 3.2 Add vacation 
+
+**Main scenario:**  
+
+    - User clicks the "Add" button in the vacation list view mode
+    
+    - Application display form to enter vacation data
+    
+    - User enters vacation data and presses "Save" button
+    
+    - If any data is entered incorrectly, incorrect data messages are displayed
+    
+    - If entered data is valid, then record is adding to database
+    
+    - If error occurs, then error message is displaying
+    
+    - If new client record is successfully added, then list of vacation with added records is displaying
+    
+**Cancel operation scenario:**
+
+    - User clicks the “Add” button in the vacation list view mode
+    
+    - Application displays form to enter vacation data
+    
+    - User enters vacation data and presses “Cancel” button
+    
+    - Data don’t save in data base, then vacation records is displaying to user
+    
+**When adding a vacation, the following details are entered:**
+
+    - Name - employee name
+    
+    - Start - vacation start
+    
+    - End - vacation end 
+    
+**Constraints for data validation:**
+    
+    - Name – maximum length of 30 characters
+    
+    - Start – vacation registration date in format dd/mm/yyyy
+    
+    - End – vacation registration date in format dd/mm/yyyy
+    
+##### 3.3 Edit vacation 
+
+**Main scenario:**
+    
+    - User clicks the “Edit” button in the vacation list view mode
+    
+    - Application displays form to enter vacation data
+    
+    - User enters vacation data and presses “Save” button
+    
+    - If any data is entered incorrectly, incorrect data messages are displayed
+    
+    - If entered data is valid, then edited data is added to database
+    
+    - If error occurs, then error message is displaying
+    
+    - If vacation record is successfully edited, then list of vacation with added records is displaying
+    
+**Cancel operation scenario:**
+
+    - User clicks the “Edit” button in the vacation list view mode
+    
+    - Application displays form to enter vacation data
+    
+    - User enters vacation data and presses “Cancel” button
+    
+    - Data don’t save in data base, then list of vacation records is displaying to user
+    
+##### 3.4 Removing vacation
+
+**Main scenario:**
+    
+    - The user, while in the list of vacation mode, presses the "Delete" button in the selected vacation line
+    
+    - Application displays confirmation dialog “Please confirm delete vacation?”
+    
+    - The user confirms the removal of the vacation
+    
+    - Record is deleted from database
+    
+    - If error occurs, then error message displays
+    
+    - If client record is successfully deleted, then list of vacation without deleted records is displaying
+    
+**Cancel operation scenario:**
+
+    - User is in display mode of vacation list and press “Delete” button
+    
+    - Application displays confirmation dialog “Please confirm delete vacation?”
+    
+    - User press “Cancel” button
+    
+    - List of vacations without changes is displaying
