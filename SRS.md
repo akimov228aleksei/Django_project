@@ -34,7 +34,7 @@ This mode is intended for viewing the list of departments, the number of employe
      - Application displays list of departments
      
      
-![](C:\Users\pawer\OneDrive\Рабочий стол\Department_display.png)
+![](E:\GitHub\Department_display.png)
    
 ***The list displays the following columns:***
 
