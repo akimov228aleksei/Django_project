@@ -34,7 +34,7 @@ This mode is intended for viewing the list of departments, the number of employe
      - Application displays list of departments
      
      
-![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prikol.ru%2F2019%2F10%2F25%2Ffoto-prikoly-68-foto-5%2F&psig=AOvVaw2T9Z2AbVjz-kB8W-mPCNzl&ust=1608731614134000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLiZ5rXe4e0CFQAAAAAdAAAAABAD)
+![](https://i.imgur.com/efBZOxO.png)
    
 ***The list displays the following columns:***
 
