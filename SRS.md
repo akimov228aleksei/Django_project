@@ -33,8 +33,7 @@ This mode is intended for viewing the list of departments, the number of employe
      - User selects item “Department”;
      - Application displays list of departments
      
-     
-![](https://i.imgur.com/efBZOxO.png)
+![](https://i.imgur.com/vzYIPyL.png)
    
 ***The list displays the following columns:***
 
@@ -71,6 +70,8 @@ This mode is intended for viewing the list of departments, the number of employe
     - User enter department data and presses "Cancel" button
     
     - Data don’t save in data base, then list of department records is displaying to user
+ 
+![](https://i.imgur.com/efBZOxO.png)
     
 ***When adding a department, the following details are entered:***
 
@@ -97,6 +98,8 @@ After creating a new department, the average salary and the number of employees 
     - If error occurs, then error message is displaying
     
     - If the department record has been edited successfully, a list of departments with the added records is displayed
+  
+![](https://i.imgur.com/XTb3nmJ.png)
     
 ***Cancel operation scenario***
 
@@ -128,7 +131,7 @@ After creating a new department, the average salary and the number of employees 
     
 ***Cancel operation scenario:***
 
-    - User is in display mode of department list and press “Delete” button
+    - User is in display mode of department list and press “Delete” button.
     
     - Application displays confirmation dialog “Please confirm delete department?”
     
@@ -136,7 +139,7 @@ After creating a new department, the average salary and the number of employees 
     
     - List of departments without changes is displaying
     
-    
+![](https://i.imgur.com/GOgLGa5.png)    
     
 #### 2. Employees 
 
@@ -149,6 +152,8 @@ The mode is intended for displaying the list of employees, their salaries and de
     - User selects item "Employees"
     
     - Application display a list of employees
+
+![](https://i.imgur.com/jtvC6FK.png)     
    
 **The list displays the following columns:**
     
@@ -187,6 +192,8 @@ The mode is intended for displaying the list of employees, their salaries and de
     - User enters employee data and presses “Cancel” button
     
     - Data don’t save in data base, then list of employee records is displaying to user
+  
+![](https://i.imgur.com/RpfP5ve.png)  
     
 **When adding a employee, the following details are entered:**
 
@@ -226,7 +233,9 @@ The mode is intended for displaying the list of employees, their salaries and de
     - User enters employee data and presses “Cancel” button
     
     - Data don’t save in data base, then list of employee records is displaying to user
-    
+
+![](https://i.imgur.com/PT5HrVv.png)
+   
 **When editing a employee, the following details are entered:**
     
     - Name - employee name
@@ -277,7 +286,7 @@ The mode is intended for displaying the list of employees, their salaries and de
   
     - List of employees without changes is displaying.
     
-    
+![](https://i.imgur.com/fkEtFra.png) 
     
 #### 3. Vacation
 
@@ -290,6 +299,8 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     - User select item "Vacation"
     
     - Application display vacation list
+    
+![](https://i.imgur.com/yqPVrA2.png)    
     
 **This list displays the following columns:**
 
@@ -326,7 +337,9 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     - User enters vacation data and presses “Cancel” button
     
     - Data don’t save in data base, then vacation records is displaying to user
-    
+
+![](https://i.imgur.com/RpfP5ve.png)
+   
 **When adding a vacation, the following details are entered:**
 
     - Name - employee name
@@ -370,7 +383,9 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     - User enters vacation data and presses “Cancel” button
     
     - Data don’t save in data base, then list of vacation records is displaying to user
-    
+
+![](https://i.imgur.com/PT5HrVv.png)
+   
 ##### 3.4 Removing vacation
 
 **Main scenario:**
@@ -396,3 +411,5 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     - User press “Cancel” button
     
     - List of vacations without changes is displaying
+    
+![](https://i.imgur.com/gJtX9af.png)
