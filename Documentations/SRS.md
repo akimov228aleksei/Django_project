@@ -130,6 +130,8 @@ After creating a new department, the average salary and the number of employees 
     
     - If there were people in this department, then they receive the mark "No department"
     
+![](https://i.imgur.com/GOgLGa5.png)      
+    
 ***Cancel operation scenario:***
 
     - User is in display mode of department list and press “Delete” button.
@@ -139,8 +141,7 @@ After creating a new department, the average salary and the number of employees 
     - User press “Cancel” button
     
     - List of departments without changes is displaying
-    
-![](https://i.imgur.com/GOgLGa5.png)    
+     
     
 #### 2. Employees 
 
