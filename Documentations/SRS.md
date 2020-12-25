@@ -60,6 +60,8 @@ This mode is intended for viewing the list of departments, the number of employe
     - If error occurs, then error message is displaying
     
     - If new department record is successfully added, then list of clients with added records is displaying
+ 
+![](https://i.imgur.com/efBZOxO.png)
     
 ***Cancel operation scenario:***
 
@@ -71,7 +73,6 @@ This mode is intended for viewing the list of departments, the number of employe
     
     - Data don’t save in data base, then list of department records is displaying to user
  
-![](https://i.imgur.com/efBZOxO.png)
     
 ***When adding a department, the following details are entered:***
 
@@ -182,7 +183,9 @@ The mode is intended for displaying the list of employees, their salaries and de
     - If error occurs, then error message is displaying
 
     - If the employee is successfully added, then his data is displayed in the employee view mode
-    
+
+![](https://i.imgur.com/EQM6I01.png)    
+
 ***Cancel operation scenario:***
 
     - User clicks the “Add” button in the employee list view mode
@@ -193,7 +196,6 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Data don’t save in data base, then list of employee records is displaying to user
   
-![](https://i.imgur.com/RpfP5ve.png)  
     
 **When adding a employee, the following details are entered:**
 
@@ -224,6 +226,8 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - If new employee record is successfully added, then list of employees with added records is displaying
     
+![](https://i.imgur.com/PT5HrVv.png)
+
 ***Cancel operation scenario:***
 
     - User clicks the “Edit” button in the employee list view mode
@@ -234,7 +238,6 @@ The mode is intended for displaying the list of employees, their salaries and de
     
     - Data don’t save in data base, then list of employee records is displaying to user
 
-![](https://i.imgur.com/PT5HrVv.png)
    
 **When editing a employee, the following details are entered:**
     
@@ -275,7 +278,9 @@ The mode is intended for displaying the list of employees, their salaries and de
     - If error occurs, then error message displays
     
     - If employee record is successfully deleted, then list of employees without deleted records is displaying
-    
+
+![](https://i.imgur.com/VhJlIWg.png)
+   
 ***Cancel operation scenaria:***
     
     - User is in display mode of employees list and press “Delete” button;
@@ -285,8 +290,7 @@ The mode is intended for displaying the list of employees, their salaries and de
     - User press “Cancel” button;
   
     - List of employees without changes is displaying.
-    
-![](https://i.imgur.com/fkEtFra.png) 
+     
     
 #### 3. Vacation
 
@@ -327,6 +331,8 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     - If error occurs, then error message is displaying
     
     - If new client record is successfully added, then list of vacation with added records is displaying
+
+![](https://i.imgur.com/RpfP5ve.png)
     
 **Cancel operation scenario:**
 
@@ -338,7 +344,6 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     
     - Data don’t save in data base, then vacation records is displaying to user
 
-![](https://i.imgur.com/RpfP5ve.png)
    
 **When adding a vacation, the following details are entered:**
 
@@ -373,6 +378,8 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     - If error occurs, then error message is displaying
     
     - If vacation record is successfully edited, then list of vacation with added records is displaying
+
+![](https://i.imgur.com/qLrEXJg.png)
     
 **Cancel operation scenario:**
 
@@ -384,7 +391,6 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     
     - Data don’t save in data base, then list of vacation records is displaying to user
 
-![](https://i.imgur.com/PT5HrVv.png)
    
 ##### 3.4 Removing vacation
 
@@ -401,7 +407,9 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     - If error occurs, then error message displays
     
     - If client record is successfully deleted, then list of vacation without deleted records is displaying
-    
+
+![](https://i.imgur.com/gJtX9af.png)
+   
 **Cancel operation scenario:**
 
     - User is in display mode of vacation list and press “Delete” button
@@ -412,4 +420,4 @@ This mode is intended for viewing employees on vacation, deleting and editing th
     
     - List of vacations without changes is displaying
     
-![](https://i.imgur.com/gJtX9af.png)
+
