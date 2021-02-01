@@ -1,0 +1,105 @@
+<html lang="ru">
+<head>
+    <style>
+    a.knopka1{
+  border-radius: 10px;
+  color: White; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: Green; /* фон кнопки */
+  padding: 0.5em 2em;; /* отступ от текста */}
+  a.knopka1:hover { background: Lime } /* при наведении курсора мышки */
+
+        td {font-family:monospace;
+        font-size:20pt;
+        text-align:center;
+        border-right-width:4;
+        border-bottom-width:3;
+        border-left-width:3;
+        border-color:black;
+         }
+
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" cellspacing="0" align="center" height="600" width="1300">
+
+    <tr>
+        <th bgcolor="DarkGray" height="20" colspan="8">Employee management</th>
+    </tr>
+
+    <tr>
+        <td style="cursor:pointer" onclick="document.location='departments.html'" bgcolor="DarkGray" rowspan="2" width="150" height="186"><font size="30">Departments</font></td>
+        <td style="text-align:left; border-bottom-width:0; border-right-width:0;color:Olive"><b>05.01.2021</b></td>
+        <td style="border-bottom-width:0; border-left-width:0;text-align:right " colspan="6"><a href="employees_add.html" class="knopka1"><font size="8">Add</a></font></td>
+
+    </tr>
+
+    <tr>
+        <td bgcolor="DarkMagenta" style="border-top-width:0" width="400"><font size="7"><b>Employee</b></font></td>
+        <td bgcolor="DarkMagenta" style="border-top-width:0"><font size="7"><b>Department</b></font></td>
+        <td bgcolor="DarkMagenta" style="border-top-width:0"><font size="7"><b>Salary</b></font></td>
+        <td bgcolor="DarkMagenta" style="border-top-width:0"><font size="7"><b>Position</b></font></td>
+        <td bgcolor="DarkMagenta" style="border-top-width:0" colspan="3"><font size="7"><b>Date</b></font></td>
+    </tr>
+
+    <tr>
+        <td bgcolor="SkyBlue" rowspan="2" height="194"><font size="30">Employees</font></td>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:red">Николай Наумов<br><div style="color:Gray;font-size:15px;height:0.1px; line-height:45px;text-align:left">Edit employee</div></td>
+        <td style="border-bottom-color:red; border-bottom-width:2;"> Traumotology</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;"> 3218 $</td>
+        <td style="border-bottom-color:red; border-bottom-width:2"> Doctor</td>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:blue; border-right-color:red;border-right-width:2;">
+            22.03.1999
+        </td>
+        <td style="border-bottom-color:red; border-bottom-width:2; border-left-width:0;text-align:bottom; border-right-width:0; text-align:left; "><a href="employees_edit.html">
+            <img src="pictures/pan.png" width="30" height="50" alt="."></a></td>
+        <td style="border-left-width:0; border-bottom-color:red; border-bottom-width:2; text-align:right;"><a href="employees_delete.html"><img
+                src="pictures/trash.png" width="30" height="50" alt="."></a></td>
+    </tr>
+
+    <tr>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:red" align="center">Иван Иванов</td>
+        <td style="border-bottom-color:red; border-bottom-width:2"> Dentistry</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;"> 1080 $</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;" width="100"> Doctor</td>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:blue; border-right-color:red;border-right-width:2;">
+            10.05.2003
+        </td>
+        <td style="border-bottom-color:red; border-bottom-width:2; border-left-width:0; border-right-width:0; text-align:left;"><a href="employees_edit.html">
+            <img src="pictures/pan.png" width="30" height="50" alt="."></a></td>
+        <td style="border-left-width:0; border-bottom-color:red; border-bottom-width:2; text-align:right;"><a href="employees_delete.html"><img
+                src="pictures/trash.png" width="30" height="50" alt="."></a></td>
+    </tr>
+
+    <tr>
+        <td style="cursor:pointer" onclick="document.location='vacation.html'" bgcolor="DarkGray" align="center" rowspan="2" height="196"><font size="30">Vacation</font></td>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:red">Пётр Смирнов</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;"> Traumotology</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;"> 258 $</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;" width="100"> Head of department</td>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:blue;border-right-color:red;border-right-width:2;">
+            18.02.1564
+        </td>
+        <td style="border-bottom-color:red; border-bottom-width:2; border-left-width:0; border-right-width:0; text-align:left;"><a href="employees_edit.html">
+            <img src="pictures/pan.png" width="30" height="50" alt="."></a></td>
+        <td style="border-left-width:0; border-bottom-color:red; border-bottom-width:2; text-align:right;"><a href="employees_delete.html"><img
+                src="pictures/trash.png" width="30" height="50" alt="."></a></td>
+    </tr>
+
+    <tr>
+        <td height="98" style="color:red;"></td>
+        <td> </td>
+        <td> </td>
+        <td width="100"> </td>
+        <td style="color:blue;border-right-color:red;border-right-width:2;" width="300"> </td>
+        <td style="border-left-width:0; border-right-width:0; text-align:left;" width="150"></td>
+        <td style="border-left-width:0; text-align:right;"></td>
+    </tr>
+
+</table>
+</body>
+</html>

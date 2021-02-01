@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+         td {font-family:monospace;
+        border-width:3;
+        border-color:black;}
+    a.knopka1{
+  border-radius: 10px;
+  color: White; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: Red; /* фон кнопки */
+  padding: 1em 2em; /* отступ от текста */}
+  a.knopka1:hover { background: Crimson } /* при наведении курсора мышки */
+
+   a.knopka2 {
+  border-radius: 10px;
+  color: White; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: Green; /* фон кнопки */
+  padding: 1em 2em; /* отступ от текста */}
+  a.knopka2:hover { background: Lime } /* при наведении курсора мышки */
+
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0" align="center" height="250" width="450">
+    <tr>
+        <th bgcolor="DarkGray" height="20" colspan="3">Delete vacation</th>
+    </tr>
+        <td width="180" rowspan="2" style="border-right-width:0">
+            <img src="pictures/mark.png"width="150" height="150" alt=".">
+        </td>
+        <td style="border-left-width:0;border-bottom-width:0" colspan="2">
+        <font size="6"><b>Please confirm delete vacation</b></font>
+        </td>
+    <tr>
+        <td valign="top" style="border-left-width:0;border-top-width:0;border-right-width:0">
+        <a href="vacation.html" class="knopka1">Cancel</a>
+        </td>
+        <td valign="top" style="border-top-width:0;border-left-width:0">
+        <a href="vacation_after_delete.html" class="knopka2">Confirm</a>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

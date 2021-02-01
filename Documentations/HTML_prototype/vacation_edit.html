@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vacation add</title>
+    <style>
+    a.knopka1{
+    font-size: 17px;
+  border-radius: 10px;
+  color: White; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: Red; /* фон кнопки */
+  padding: 1em 2em; /* отступ от текста */}
+  a.knopka1:hover { background: Crimson } /* при наведении курсора мышки */
+
+   a.knopka2 {
+   font-size: 17px;
+  border-radius: 10px;
+  color: White; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: Green; /* фон кнопки */
+  padding: 1em 3em; /* отступ от текста */}
+  a.knopka2:hover { background: Lime } /* при наведении курсора мышки */
+
+   .user {
+    width: 300px; /* Ширина поля с учетом padding */
+    height: 30px; /* Высота */
+    padding:  10px; /* Поля *
+    font-size: 16; /* Размер текста */
+    border-color:Lime;
+    border-width:5;
+   }
+   td {
+   font-size:20px;
+   font-family:monospace;
+   border-width:0
+   }
+    </style>
+</head>
+<body>
+<table border="4" cellspacing="0" align="center" height="400" width="800">
+    <tr>
+        <th bgcolor="DarkGray" style="border-bottom-width:3" height="20" colspan="6">Vacation edit</th>
+    </tr>
+
+    <tr>
+        <td height="20" colspan="2" style="color:olive;">21.11.2021</td>
+        <td colspan="2"> </td>
+    </tr>
+
+    <tr>
+        <td height="50" width="150"></td>
+        <td style="border-left-width:4;border-top-width:4;color:DarkCyan">Name:</td>
+        <td style="border-top-width:4;border-right-width:4"><input class="user" type="text"></td>
+        <td width="100"></td>
+    </tr>
+
+    <tr>
+        <td height="50"></td>
+        <td style="border-left-width:4;color:DarkCyan">Start:</td>
+        <td style="border-right-width:4"><input class="user" type="text"></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td height="50"></td>
+        <td style="border-left-width:4;color:DarkCyan">End:</td>
+        <td style="border-right-width:4"><input class="user" type="text"></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td height="50"></td>
+        <td style="border-left-width:4;color:DarkCyan"></td>
+        <td style="border-right-width:4"></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td height="50"></td>
+        <td style="border-left-width:4;border-bottom-width:4;color:DarkCyan"></td>
+        <td style="border-bottom-width:4;border-right-width:4"></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><a href="vacation.html" class="knopka1">Cancel</a></td>
+        <td align="right" ><a href="vacation_after_edit.html" class="knopka2">Save</a></td>
+        <td></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<html lang="ru">
+<head>
+    <style>
+    a.knopka1{
+  border-radius: 10px;
+  color: White; /* цвет текста */
+  text-decoration: none; /* убирать подчёркивание у ссылок */
+  user-select: none; /* убирать выделение текста */
+  background: Green; /* фон кнопки */
+  padding: 0.5em 2em;; /* отступ от текста */}
+  a.knopka1:hover { background: Lime } /* при наведении курсора мышки */
+        td {font-family:monospace;
+        font-size:20pt;
+        text-align:center;
+        border-right-width:4;
+        border-bottom-width:3;
+        border-left-width:3;
+        border-color:black;
+         }
+
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1" cellspacing="0" align="center" height="600" width="1300">
+
+    <tr>
+        <th bgcolor="DarkGray" height="20" colspan="6">Employee management</th>
+    </tr>
+
+    <tr>
+        <td style="cursor:pointer" onclick="document.location='departments.html'" bgcolor="DarkGray" rowspan="2" width="150"><font size="30">Departments</font></td>
+        <td style="text-align:left; border-bottom-width:0; border-right-width:0; color:Olive"><b>05.01.2021</b></td>
+        <td style="border-bottom-width:0; border-left-width:0;text-align:right" colspan="4"><a href="departments_add.html" class="knopka1"><font size="8">Add</a></font>
+        </td>
+
+    </tr>
+
+    <tr>
+        <td bgcolor="DarkMagenta" style="border-top-width:0" width="300"><font size="7"><b> Employee </b></font></td>
+        <td bgcolor="DarkMagenta" style="border-top-width:0" width="350"><font size="7"><b> Start </b></font></td>
+        <td bgcolor="DarkMagenta" style="border-top-width:0" colspan="3" ><font size="7"><b> End </b></font></td>
+    </tr>
+
+    <tr>
+        <td style="cursor:pointer" onclick="document.location='employees.html'" bgcolor="DarkGray" rowspan="2"><font size="30">Employees</font></td>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:red" align="center"> Алексей Акимов</td>
+        <td style="border-bottom-color:red; border-bottom-width:2"> 18.01.2021</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;border-right-color:red; border-right-width:2;color:blue"> 29.01.2021 </td>
+        <td style="border-bottom-color:red; border-bottom-width:2; border-left-width:0;text-align:bottom; border-right-width:0; text-align:center; "><a href="vacation_edit.html">
+            <img src="pictures/pan.png" width="30" height="50" alt="."></a></td>
+        <td style="border-left-width:0; border-bottom-color:red; border-bottom-width:2; text-align:right;" width="50"><a href="vacation_delete.html">
+            <img src="pictures/trash.png" width="30" height="50" alt="."></a></td>
+    </tr>
+
+    <tr>
+        <td style="border-bottom-color:red; border-bottom-width:2; color:red;" align="center">Иван Иванов</td>
+        <td style="border-bottom-color:red; border-bottom-width:2"> 11.07.2020</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;border-right-color:red;border-right-width:2;color:blue">
+            12.08.2020
+        </td>
+        <td style="border-bottom-color:red; border-bottom-width:2; border-left-width:0; border-right-width:0; text-align:center;"><a href="vacation_edit.html">
+            <img src="pictures/pan.png" width="30" height="50" alt="."></a></td>
+        <td style="border-left-width:0; border-bottom-color:red; border-bottom-width:2; text-align:right;"><a href="vacation_delete.html"><img
+                src="pictures/trash.png" width="30" height="50" alt="."></a></td>
+    </tr>
+
+    <tr>
+        <td bgcolor="SkyBlue" align="center" rowspan="2"><font size="30">Vacation</font></td>
+        <td valign="bottom" height="90" style="border-bottom-color:red; border-bottom-width:2; color:Grey;font-size:15px;text-align:left;">Delete vacation</td>
+        <td style="border-bottom-color:red; border-bottom-width:2;"> </td>
+        <td style="border-bottom-color:red; border-bottom-width:2;border-right-color:red;border-right-width:2;color:blue"></td>
+        <td style="border-bottom-color:red; border-bottom-width:2; border-left-width:0; border-right-width:0; text-align:centr;"></td>
+        <td style="border-left-width:0; border-bottom-color:red; border-bottom-width:2; text-align:right;"></td>
+    </tr>
+
+    <tr>
+        <td height="90" style="color:red"></td>
+        <td></td>
+        <td style="border-right-color:red;border-right-width:2; color:blue;"> </td>
+        <td style="border-left-width:0; border-right-width:0; text-align:centr;" width="30"></td>
+        <td style="border-left-width:0; text-align:right;"></td>
+    </tr>
+
+</table>
+</body>
+</html>
