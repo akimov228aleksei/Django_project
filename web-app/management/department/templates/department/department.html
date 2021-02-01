@@ -1,0 +1,31 @@
+{% extends 'department/layout.html' %}
+
+{% block title %}
+    Department
+{% endblock %}
+{% block button %}
+<a href="{% url 'add' %}"><button type="button" class="btn btn-success"> Add</button></a>
+{% endblock %}
+
+{% block content %}
+
+<div class="div3">
+    {% if department %}
+        <table cellspacing="0" width="800">
+            <tr id="myline">
+                <td>Department</td><td>Salary</td><td>Amount</td>
+            </tr>
+                {% for el in department %}
+                        <tr id="mysize">
+                            <td>{{ el.name }}</td>
+                            <td>{{ el.name }}</td>
+                            <td>{{ el.name }}</td>
+                            <td><a href="{% url 'department-update' el.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+                            <td><a href="{% url 'department-delete' el.id %}"><i class="fas fa-trash-alt"></i></a></td>
+                        </tr>
+                {% endfor %}
+    {% else %}
+            <span>No data</span>
+     {% endif %}
+    </div>
+{% endblock %}
