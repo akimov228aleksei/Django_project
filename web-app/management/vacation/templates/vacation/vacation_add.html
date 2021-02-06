@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vacation add</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'department/css/department.css' %}">
+</head>
+<body>
+    <div class="layout_add">
+         <form method="post">
+                {% csrf_token %}
+                <span id="add_time">{{ time }}</span>
+                {{ form.name }}
+                {{ form.date1 }}
+                {{ form.date2 }}
+                <span>{{ error }}</span>
+                <a href="{% url 'vacation_home' %}"><button id="bt1_add" type="button" class="btn btn-danger">Cancel</button></a>
+                <button id="bt2_add" class="btn btn-success" type="submit" >Add</button>
+     </form>
+    </div>
+</body>
+</html>

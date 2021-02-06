@@ -4,18 +4,18 @@ from .models import Department
 from .forms import DepartmentForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 
-
 def department_home(request):
 
     department = Department.objects.all()
-    time = datetime.now()
+    time = datetime.now().date()
 
-    date = {
+
+    data = {
         'time': time,
         'department': department,
     }
 
-    return render(request, 'department/department.html', date)
+    return render(request, 'department/department.html', data)
 
 
 class DepartmentUpdateView(UpdateView):
@@ -45,7 +45,7 @@ def add(request):
 
     form = DepartmentForm()
 
-    time = datetime.now()
+    time = datetime.now().date()
 
     data = {
         'form': form,

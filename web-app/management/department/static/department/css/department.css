@@ -1,16 +1,44 @@
 body {
     background:Gainsboro;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
 }
 
+.div3 {
+    overflow:auto;
+    width:100%;
+    height: 91%;
+    margin-top:0%;
+    border-bottom: 2px solid grey;
+}
 
 .div1 {
-    margin-left:250px;
-    margin-top:50px;
+    position: fixed;
+    top: 5%;
+    left: 3%;
+    width:94%;
+    height: 82%;
+
 }
+.table_2{
+    margin-top:1%;
+    margin-left:2%;
+    width:98%;
+}
+
+
+.table_1{
+    width:100%;
+    height:100%;
+}
+
 .div2{
    position:absolute;
-   left:420px;
-   top:90px;
+   left:120px;
+   top:30px;
    width:810px;
 }
 
@@ -52,19 +80,12 @@ div span{
    top:547px;
 }
 
-.div3 {
-    height:383px;
-    overflow:auto;
-    position:absolute;
-    top:160px;
-    left:430px;
-}
 
 #myline{
+    color:Black;
     border-bottom: 2px solid black;
     font-weight: bold;
-    height:40px;
-    font-size:23px;
+    font-size:30px;
 }
 
 #mysize{
@@ -74,6 +95,7 @@ div span{
     font-size:20px;
     height:50px;
     border-bottom-width:1px;
+    font-weight: 500;
 }
 .layout_add{
     background: Silver;
@@ -86,28 +108,33 @@ div span{
     border-radius:10px;
 }
 
-#bt1_add{
-    margin-right:20px;
-    margin-bottom:30px;
-   }
-
 .form-control{
     font-weight:bold;
     font-size:20px;
     margin-left:100px;
     margin-top:60px;
     width:400px;
+    margin-top:3%;
 }
 .form-control::-webkit-input-placeholder { color: DarkGrey; }
 
+#bt1_add{
+    margin-top:2%;
+    margin-right:4%;
+    margin-bottom:3%;
+   }
+
+
 #bt2_add{
-    margin-right:90px;
-    margin-bottom:30px;
+    margin-top:2%;
+    margin-right:16%;
+    margin-bottom:3%;
 }
 
 #add_time{
-    margin-right:370px;
-    color:Black;
+    margin-right:80%;
+    color:SteelBlue;
+    font-weight: 600;
 }
 
 a:hover{
@@ -115,20 +142,20 @@ a:hover{
 }
 
 .department_delete{
-    position:absolute;
-    top:30px;
-    height:180px;
-    left:430px;
+    position: fixed;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+    height:25%;
     background: Silver;
     border: 3px solid black;
-    width:600px;
     border-radius:10px;
 }
 
 #add_text{
-    margin-left:200px;
+    margin-left:33%;
     color:black;
-    font-size:30px;
+    font-size:200%;
 }
 
 #bt1_del{
@@ -146,4 +173,22 @@ a:hover{
     top:17px;
     left:10px;
     size: 9x;
+}
+
+#time{
+    color:SteelBlue;
+    margin-left:3%;
+    font-weight: 600;
+}
+
+button[class="my btn btn-success"]{
+    margin-top:1%;
+    width:10%;
+    margin-left:70%;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.2s;
+}
+button[class="my btn btn-success"]:hover {
+    background-color: Gainsboro;
+    color: Black;
 }
