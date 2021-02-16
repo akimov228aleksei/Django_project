@@ -7,11 +7,23 @@ from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 def employee_home(request):
+
     employee = Employee.objects.all()
     time = datetime.now().date()
+
+    new_list = ''                         # Вычисление средней ЗП
+    list_sum = 0                         #
+    k = 0                                #
+    for i in employee:                   #
+        list_sum += int(i.salary[:-1])   #
+        k += 1                           #
+
+    new_list = str(round(list_sum/k)) + " $"
+
     data = {
         'time': time,
         'employee': employee,
+        'new_list': new_list,
     }
 
     return render(request, 'employee/employee.html', data)
