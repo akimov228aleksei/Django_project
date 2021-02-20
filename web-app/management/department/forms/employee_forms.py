@@ -1,4 +1,4 @@
-from .models import Employee
+from ..models.employee_models import Employee
 from django.forms import ModelForm, TextInput, DateInput
 
 class EmployeeForm(ModelForm):

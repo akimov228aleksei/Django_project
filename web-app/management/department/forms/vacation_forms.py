@@ -1,4 +1,4 @@
-from .models import Vacation
+from ..models.vacation_models import Vacation
 from django.forms import ModelForm, TextInput, DateInput
 
 class VacationForm(ModelForm):

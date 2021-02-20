@@ -1,10 +1,24 @@
 from django.shortcuts import render,redirect
 from datetime import datetime
-from .models import Employee
-from .forms import EmployeeForm
+from ..models.employee_models import Employee
+from ..forms.employee_forms import EmployeeForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
+def salary():
+    employee = Employee.objects.all()
+    new_list = ''  # Вычисление средней ЗП
+    list_sum = 0  #
+    k = 0  #
+    for i in employee:  #
+        list_sum += int(i.salary[:-1])  #
+        k += 1  #
+
+    if list_sum:
+        new_list = str(round(list_sum / k)) + " $"
+    else:
+        new_list = '-'
+    return new_list
 
 def employee_home(request):
 
@@ -18,12 +32,13 @@ def employee_home(request):
         list_sum += int(i.salary[:-1])   #
         k += 1                           #
 
-    new_list = str(round(list_sum/k)) + " $"
+    if list_sum:
+        new_list = str(round(list_sum/k)) + " $"
+
 
     data = {
         'time': time,
         'employee': employee,
-        'new_list': new_list,
     }
 
     return render(request, 'employee/employee.html', data)

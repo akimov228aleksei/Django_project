@@ -1,18 +1,21 @@
 from django.shortcuts import render,redirect
 from datetime import datetime
-from .models import Department
-from .forms import DepartmentForm
-from django.views.generic import DetailView, UpdateView, DeleteView
+from ..models.department_models import Department
+from ..forms.department_forms import DepartmentForm
+from django.views.generic import UpdateView, DeleteView
+from .employee_views import salary
 
 def department_home(request):
 
     department = Department.objects.all()
     time = datetime.now().date()
 
+    Salary = salary()
 
     data = {
         'time': time,
         'department': department,
+        'salary': Salary,
     }
 
     return render(request, 'department/department.html', data)

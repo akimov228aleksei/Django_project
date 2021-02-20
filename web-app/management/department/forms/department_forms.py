@@ -1,4 +1,4 @@
-from .models import Department
+from ..models.department_models import Department
 from django.forms import ModelForm, TextInput
 
 class DepartmentForm(ModelForm):
