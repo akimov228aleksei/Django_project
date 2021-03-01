@@ -1,0 +1,2 @@
+DateTime==4.3
+Django==3.1.6
