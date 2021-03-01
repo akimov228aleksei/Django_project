@@ -5,6 +5,7 @@ class Department(models.Model):
     name = models.CharField('Department:', max_length=30)
 
 
+
     def get_absolute_url(self):
         return '/'
 

@@ -1,21 +1,20 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from datetime import datetime
-from ..models.department_models import Department
-from ..forms.department_forms import DepartmentForm
+from department.models.department import Department
+from department.forms.department import DepartmentForm
 from django.views.generic import UpdateView, DeleteView
-from .employee_views import salary
+
 
 def department_home(request):
 
-    department = Department.objects.all()
     time = datetime.now().date()
+    department = Department.objects.all()
 
-    Salary = salary()
 
     data = {
         'time': time,
         'department': department,
-        'salary': Salary,
+
     }
 
     return render(request, 'department/department.html', data)
@@ -44,7 +43,7 @@ def add(request):
             form.save()
             return redirect('home')
         else:
-            error = "Ошибка"
+            error = "Ошибка валидации"
 
     form = DepartmentForm()
 

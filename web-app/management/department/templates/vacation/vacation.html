@@ -20,7 +20,7 @@
 
                 {% for el in vacation %}
                         <tr id="mysize">
-                            <td style="font-family:Andale Mono, monospace, fantasy;font-size:25px;font-weight: 700;font-style: normal">{{ el.name }}</td>
+                            <td style="font-family:font-family:Andale Mono, monospace, fantasy;font-size:25px;font-weight: 700;font-style: normal">{{ el.name }}</td>
                             <td>{{ el.date1 }}</td>
                             <td>{{ el.date2 }}</td>
                             <td width="3%"><a href="{% url 'vacation-update' el.id %}"><i class="fas fa-pencil-alt"></i></a></td>

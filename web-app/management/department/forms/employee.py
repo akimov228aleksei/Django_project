@@ -1,19 +1,19 @@
-from ..models.employee_models import Employee
-from django.forms import ModelForm, TextInput, DateInput
+from django.forms import ModelForm, TextInput, Select, DateInput
+from department.models.employee import Employee
+
+
 
 class EmployeeForm(ModelForm):
     class Meta:
         model = Employee
-        fields = ['name','dep','salary','position','date']
-
+        fields = ['name', 'dep', 'salary', 'position', 'date']
         widgets = {
             "name": TextInput(attrs={
                                'class': 'form-control',
                                'placeholder': 'Enter a name for employee... '
                                 }),
-            "dep": TextInput(attrs={
+            "dep": Select(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter a name for the department... '
             }),
             "salary": TextInput(attrs={
                 'class': 'form-control',
