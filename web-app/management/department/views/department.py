@@ -53,5 +53,6 @@ def add(request):
         'form': form,
         'error': error,
         'time': time,
+
     }
     return render(request,'department/department_add.html', data)
