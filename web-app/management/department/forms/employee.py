@@ -15,7 +15,7 @@ class EmployeeForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['date'].input_formats = ['%d.%m.%Y']
+        self.fields['date'].input_formats = ['%d %m %Y']
 
     class Meta:
         model = Employee

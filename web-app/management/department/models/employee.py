@@ -9,15 +9,15 @@ from .department import Department
 class Employee(models.Model):
     """Class containing fields and methods of the model"""
 
-    # def no_future(value):
-    #     if value > date.today():
-    #         raise ValidationError('Date cannot be in the future.')
+    def no_future(value):
+        if value > date.today():
+            raise ValidationError('Date cannot be in the future.')
 
     name = models.CharField('Employee:', max_length=30)
     dep = models.ForeignKey(Department, on_delete=models.CASCADE)
     salary = models.IntegerField('Salary:')
     position = models.CharField('Position:', max_length=30)
-    date = models.DateField(max_length=30)
+    date = models.DateField(validators=[no_future])
 
     @staticmethod
     def get_absolute_url():
