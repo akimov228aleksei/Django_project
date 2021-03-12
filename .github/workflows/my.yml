@@ -1,11 +1,5 @@
 name: Python-package
 
-env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    run: |
-        coveralls
-        coveralls --service=github
-
 on: [push]
 
 jobs:
