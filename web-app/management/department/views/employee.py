@@ -1,16 +1,17 @@
-from django.shortcuts import render, redirect
+"""Module containing application logic"""
+
 from datetime import datetime
+from django.shortcuts import render, redirect
+from django.views.generic import UpdateView, DeleteView
 from department.models.employee import Employee
 from department.forms.employee import EmployeeForm
-from django.views.generic import UpdateView, DeleteView
-
 
 
 def employee_home(request):
+    """Function to display the home page"""
 
     employee = Employee.objects.all()
     time = datetime.now().date()
-
 
     data = {
         'time': time,
@@ -21,17 +22,19 @@ def employee_home(request):
 
 
 def employee_add(request):
+    """Function to add a new entry"""
+
     error = ''
     form = EmployeeForm()
 
     if request.method == "POST":
         form = EmployeeForm(request.POST)
+        print(form)
         if form.is_valid():
+            print(form)
             form.save()
             return redirect('employee_home')
-        else:
-            error = "Ошибка"
-
+        error = "Data entry error"
 
     time = datetime.now().date()
 
@@ -42,7 +45,9 @@ def employee_add(request):
     }
     return render(request, 'employee/employee_add.html', data)
 
+
 class EmployeeUpdateView(UpdateView):
+    """Class for editing content"""
 
     model = Employee
     template_name = 'employee/employee_add.html'
@@ -50,6 +55,7 @@ class EmployeeUpdateView(UpdateView):
 
 
 class EmployeeDeleteView(DeleteView):
+    """Class for removing content"""
 
     model = Employee
     template_name = 'employee/employee_delete.html'

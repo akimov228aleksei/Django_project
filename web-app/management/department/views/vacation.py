@@ -1,12 +1,14 @@
-from django.shortcuts import render,redirect
+"""Module containing application logic"""
+
 from datetime import datetime
+from django.shortcuts import render, redirect
+from django.views.generic import DetailView, UpdateView, DeleteView
 from department.models.vacation import Vacation
 from department.forms.vacation import VacationForm
-from django.views.generic import DetailView, UpdateView, DeleteView
-
 
 
 def vacation_home(request):
+    """Function to display the home page"""
 
     vacation = Vacation.objects.all()
     time = datetime.now().date()
@@ -19,6 +21,8 @@ def vacation_home(request):
 
 
 def vacation_add(request):
+    """Function to add a new entry"""
+
     error = ''
 
     if request.method == "POST":
@@ -26,21 +30,22 @@ def vacation_add(request):
         if form.is_valid():
             form.save()
             return redirect('vacation_home')
-        else:
-            error = "Ошибка"
+        error = "Ошибка"
 
     form = VacationForm()
 
     time = datetime.now().date()
 
     data = {
-        'form': form,
         'error': error,
+        'form': form,
         'time': time,
     }
-    return render(request,'vacation/vacation_add.html', data)
+    return render(request, 'vacation/vacation_add.html', data)
+
 
 class VacationUpdateView(UpdateView):
+    """Class for editing content"""
 
     model = Vacation
     template_name = 'vacation/vacation_add.html'
@@ -48,6 +53,7 @@ class VacationUpdateView(UpdateView):
 
 
 class VacationDeleteView(DeleteView):
+    """Class for removing content"""
 
     model = Vacation
     template_name = 'vacation/vacation_delete.html'

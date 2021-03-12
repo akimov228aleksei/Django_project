@@ -1,15 +1,17 @@
-from django.shortcuts import render, redirect
+"""Module containing application logic"""
+
 from datetime import datetime
+from django.shortcuts import render, redirect
+from django.views.generic import UpdateView, DeleteView
 from department.models.department import Department
 from department.forms.department import DepartmentForm
-from django.views.generic import UpdateView, DeleteView
 
 
 def department_home(request):
+    """Function to display the home page"""
 
     time = datetime.now().date()
     department = Department.objects.all()
-
 
     data = {
         'time': time,
@@ -20,21 +22,9 @@ def department_home(request):
     return render(request, 'department/department.html', data)
 
 
-class DepartmentUpdateView(UpdateView):
-
-    model = Department
-    template_name = 'department/department_add.html'
-    form_class = DepartmentForm
-
-
-class DepartmentDeleteView(DeleteView):
-
-    model = Department
-    template_name = 'department/department_delete.html'
-    success_url = '/'
-
-
 def add(request):
+    """Function to add a new entry"""
+
     error = ''
 
     if request.method == "POST":
@@ -42,17 +32,32 @@ def add(request):
         if form.is_valid():
             form.save()
             return redirect('home')
-        else:
-            error = "Ошибка валидации"
+        error = "Ошибка валидации"
 
     form = DepartmentForm()
 
     time = datetime.now().date()
 
     data = {
+        'time': time,
         'form': form,
         'error': error,
-        'time': time,
 
     }
-    return render(request,'department/department_add.html', data)
+    return render(request, 'department/department_add.html', data)
+
+
+class DepartmentUpdateView(UpdateView):
+    """Class for editing content"""
+
+    model = Department
+    template_name = 'department/department_add.html'
+    form_class = DepartmentForm
+
+
+class DepartmentDeleteView(DeleteView):
+    """Class for removing content"""
+
+    model = Department
+    template_name = 'department/department_delete.html'
+    success_url = '/'

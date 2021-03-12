@@ -1,7 +1,7 @@
+"""Module with URL ratios"""
+
 from django.urls import path
 from department import views
-
-
 
 urlpatterns = [
     path('', views.department_home, name='home'),
