@@ -16,6 +16,7 @@ jobs:
           python-version: 3.9
       - name: Generate coverage report
         run: |
+          pip install pytest
           pip install coveralls
           coverage run --source=mypkg -m pytest tests/
           coveralls
