@@ -3,35 +3,7 @@ name: Python-package
 on: [push]
 
 jobs:
-<<<<<<< HEAD
-
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-
-    - uses: actions/checkout@v1
-
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-
-    - name: npm install, make test-coverage
-      run: |
-        npm install
-        make test-coverage
-
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-
-jobs:
-  build:
-=======
   one_build:
->>>>>>> cb6caa6c484c390ad3033bd569581b41ca515f3d
 
     runs-on: ubuntu-latest
     strategy:
@@ -55,9 +27,6 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-
-<<<<<<< HEAD
-=======
   second_build:
 
     runs-on: ubuntu-latest
@@ -81,4 +50,3 @@ jobs:
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
->>>>>>> cb6caa6c484c390ad3033bd569581b41ca515f3d
