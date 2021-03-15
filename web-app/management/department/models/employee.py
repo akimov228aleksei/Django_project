@@ -10,6 +10,8 @@ class Employee(models.Model):
     """Class containing fields and methods of the model"""
 
     def no_future(value):
+        """Function that checks if a date is greater than today's date"""
+
         if value > date.today():
             raise ValidationError('Date cannot be in the future.')
 

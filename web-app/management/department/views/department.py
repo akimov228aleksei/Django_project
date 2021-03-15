@@ -3,8 +3,9 @@
 from datetime import datetime
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView, DeleteView
-from department.models.department import Department
-from department.forms.department import DepartmentForm
+from forms.department import DepartmentForm
+from models.department import Department
+
 
 
 def department_home(request):
