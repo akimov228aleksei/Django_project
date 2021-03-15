@@ -2,7 +2,7 @@
 
 from datetime import datetime
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView
 from department.models.vacation import Vacation
 from department.forms.vacation import VacationForm
 

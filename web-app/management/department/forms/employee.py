@@ -19,10 +19,10 @@ class EmployeeForm(ModelForm):
 
     class Meta:
         model = Employee
-        fields = ['name', 'dep', 'salary', 'position', 'date']
+        fields = ['name_employee', 'dep', 'salary', 'position', 'date']
 
         widgets = {
-            "name": TextInput(attrs={
+            "name_employee": TextInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Enter employee name... '
             }),

@@ -3,8 +3,8 @@ The module describes the form that will
 be displayed when adding a new department.
 """
 
-from models.department import Department
 from django.forms import ModelForm, TextInput
+from department.models.department import Department
 
 
 class DepartmentForm(ModelForm):

@@ -15,7 +15,7 @@ class Employee(models.Model):
         if value > date.today():
             raise ValidationError('Date cannot be in the future.')
 
-    name = models.CharField('Employee:', max_length=30)
+    name_employee = models.CharField('Employee:', unique=True, max_length=30)
     dep = models.ForeignKey(Department, on_delete=models.CASCADE)
     salary = models.IntegerField('Salary:')
     position = models.CharField('Position:', max_length=30)
@@ -30,4 +30,4 @@ class Employee(models.Model):
     def __str__(self):
         """A function that returns a reference to the name field"""
 
-        return self.name
+        return self.name_employee
