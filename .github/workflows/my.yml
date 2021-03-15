@@ -3,6 +3,7 @@ name: Python-package
 on: [push]
 
 jobs:
+<<<<<<< HEAD
 
   build:
     name: Build
@@ -28,6 +29,9 @@ jobs:
 
 jobs:
   build:
+=======
+  one_build:
+>>>>>>> cb6caa6c484c390ad3033bd569581b41ca515f3d
 
     runs-on: ubuntu-latest
     strategy:
@@ -52,3 +56,29 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
+<<<<<<< HEAD
+=======
+  second_build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          pip install coverage
+          pip install django
+          cd web-app/management/department
+          coverage run -m unittest
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+>>>>>>> cb6caa6c484c390ad3033bd569581b41ca515f3d
