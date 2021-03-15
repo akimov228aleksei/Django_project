@@ -1,2 +1,6 @@
 DateTime==4.3
 Django==3.1.6
+pylint-django==2.4.2
+pylint==2.7.2
+coverage==5.5
+
