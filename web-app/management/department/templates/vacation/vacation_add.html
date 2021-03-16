@@ -14,8 +14,8 @@
                 {% csrf_token %}
                 <span id="add_time">{{ time }}</span>
                 {{ form.name_vacation }}
-                {{ form.date1 }}
-                {{ form.date2 }}
+                <input type="date" class="form-control" name="date1">
+                <input type="date" class="form-control" name="date2">
                 <span>{{ error }}</span>
                 <a href="{% url 'vacation_home' %}"><button id="bt1_add" type="button" class="btn btn-danger">Cancel</button></a>
                 <button id="bt2_add" class="btn btn-success" type="submit" >Add</button>

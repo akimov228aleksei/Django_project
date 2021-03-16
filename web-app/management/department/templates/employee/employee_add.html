@@ -18,7 +18,7 @@
                 {{ form.dep }}
                 {{ form.salary }}
                 {{ form.position }}
-                {{ form.date }}
+                <input type="date" class="form-control"  name="date">
                 <span>{{ error }}</span>
                 <a href="{% url 'employee_home' %}"><button id="bt1_add" type="button" class="btn btn-danger">Cancel</button></a>
                 <button id="bt2_add" class="btn btn-success" type="submit" >Add</button>
