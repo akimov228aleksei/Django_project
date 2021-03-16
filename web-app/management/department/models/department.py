@@ -3,6 +3,7 @@
 from django.db import models
 
 
+
 class Department(models.Model):
     """Class containing fields and methods of the model"""
 
@@ -12,8 +13,7 @@ class Department(models.Model):
     def salary(self):
         """A function that calculates the average salary of each department"""
 
-        from department.models.employee import Employee
-
+        from department.models import Employee
         emp_set = Employee.objects.filter(dep=self.pk)
         sal = 0
         if emp_set:
@@ -25,7 +25,7 @@ class Department(models.Model):
     def amount(self):
         """A function that counts the number of employees in each department"""
 
-        from department.models.employee import Employee
+        from department.models import Employee
 
         emp_set = Employee.objects.filter(dep=self.pk)
 
