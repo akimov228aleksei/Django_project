@@ -13,11 +13,6 @@ class VacationForm(ModelForm):
     fields of type equal to the fields of the model
     """
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['date1'].input_formats = ['%d %m %Y']
-        self.fields['date2'].input_formats = ['%d %m %Y']
-
     class Meta:
         model = Vacation
         fields = ['name_vacation', 'date1', 'date2']

@@ -13,10 +13,6 @@ class EmployeeForm(ModelForm):
     fields of type equal to the fields of the model
     """
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['date'].input_formats = ['%d %m %Y']
-
     class Meta:
         model = Employee
         fields = ['name_employee', 'dep', 'salary', 'position', 'date']
@@ -35,10 +31,10 @@ class EmployeeForm(ModelForm):
             }),
             "position": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter position... '
+                'placeholder': 'Enter position... ',
             }),
             "date": DateInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Enter date (dd mm yyyy)... '
+                'placeholder': 'Enter date... '
             })
         }
