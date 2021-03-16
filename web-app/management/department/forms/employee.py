@@ -17,6 +17,11 @@ class EmployeeForm(ModelForm):
         model = Employee
         fields = ['name_employee', 'dep', 'salary', 'position', 'date']
 
+        CHOICE_POSITION = (('Position_1', 'Position_1'),
+                           ('Position_2', 'Position_2'),
+                           ('Position_3', 'Position_3'),
+                           ('Position_4', 'Position_4'))
+
         widgets = {
             "name_employee": TextInput(attrs={
                 'class': 'form-control',
@@ -29,7 +34,7 @@ class EmployeeForm(ModelForm):
                 'class': 'form-control',
                 'placeholder': 'Enter salary... '
             }),
-            "position": TextInput(attrs={
+            "position": Select(choices=CHOICE_POSITION, attrs={
                 'class': 'form-control',
                 'placeholder': 'Enter position... ',
             }),
