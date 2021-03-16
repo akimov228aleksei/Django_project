@@ -3,7 +3,6 @@
 from django.db import models
 
 
-
 class Department(models.Model):
     """Class containing fields and methods of the model"""
 
@@ -14,6 +13,7 @@ class Department(models.Model):
         """A function that calculates the average salary of each department"""
 
         from department.models import Employee
+
         emp_set = Employee.objects.filter(dep=self.pk)
         sal = 0
         if emp_set:
@@ -27,9 +27,7 @@ class Department(models.Model):
 
         from department.models import Employee
 
-        emp_set = Employee.objects.filter(dep=self.pk)
-
-        return len(emp_set)
+        return len(Employee.objects.filter(dep=self.pk))
 
     @staticmethod
     def get_absolute_url():

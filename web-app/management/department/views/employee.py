@@ -28,10 +28,9 @@ def employee_add(request):
     form = EmployeeForm()
 
     if request.method == "POST":
+        print(request.POST)
         form = EmployeeForm(request.POST)
-        print(form)
         if form.is_valid():
-            print(form)
             form.save()
             return redirect('employee_home')
         error = "Data entry error"
