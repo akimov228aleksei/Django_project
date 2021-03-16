@@ -16,7 +16,7 @@ class Employee(models.Model):
             raise ValidationError('Date cannot be in the future.')
 
     name_employee = models.CharField('Employee:', unique=True, max_length=30)
-    dep = models.ForeignKey(Department, on_delete=models.CASCADE)
+    dep = models.ForeignKey(Department, null=True, on_delete=models.SET_NULL)
     salary = models.IntegerField('Salary:')
     position = models.CharField('Position:', max_length=30)
     date = models.DateField(validators=[no_future])
