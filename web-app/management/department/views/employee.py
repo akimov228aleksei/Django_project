@@ -28,7 +28,6 @@ def employee_add(request):
     form = EmployeeForm()
 
     if request.method == "POST":
-        print(request.POST)
         form = EmployeeForm(request.POST)
         if form.is_valid():
             form.save()
