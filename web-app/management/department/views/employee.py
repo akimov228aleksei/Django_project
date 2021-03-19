@@ -1,6 +1,5 @@
 """Module containing application logic"""
 
-from datetime import datetime
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView, DeleteView
 from department.models.employee import Employee
@@ -11,10 +10,8 @@ def employee_home(request):
     """Function to display the home page"""
 
     employee = Employee.objects.all()
-    time = datetime.now().date()
 
     data = {
-        'time': time,
         'employee': employee,
     }
 
@@ -34,13 +31,11 @@ def employee_add(request):
             return redirect('employee_home')
         error = "Data entry error"
 
-    time = datetime.now().date()
-
     data = {
         'form': form,
         'error': error,
-        'time': time,
     }
+
     return render(request, 'employee/employee_add.html', data)
 
 

@@ -1,6 +1,5 @@
 """Module containing application logic"""
 
-from datetime import datetime
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView, DeleteView
 from department.models.vacation import Vacation
@@ -11,9 +10,8 @@ def vacation_home(request):
     """Function to display the home page"""
 
     vacation = Vacation.objects.all()
-    time = datetime.now().date()
+
     data = {
-        'time': time,
         'vacation': vacation,
     }
 
@@ -34,13 +32,11 @@ def vacation_add(request):
 
     form = VacationForm()
 
-    time = datetime.now().date()
-
     data = {
         'error': error,
         'form': form,
-        'time': time,
     }
+
     return render(request, 'vacation/vacation_add.html', data)
 
 
