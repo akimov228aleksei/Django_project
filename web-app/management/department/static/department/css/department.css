@@ -1,13 +1,13 @@
 body {
     background:Gainsboro;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
-.div3 {
+.content_layout {
     overflow:auto;
     width:100%;
     height: 91%;
@@ -15,7 +15,7 @@ body {
     border-bottom: 2px solid grey;
 }
 
-.div1 {
+.app_location {
     position: fixed;
     top: 5%;
     left: 3%;
@@ -23,23 +23,16 @@ body {
     height: 82%;
 
 }
-.table_2{
+.table_layout {
     margin-top:1%;
     margin-left:2%;
     width:98%;
 }
 
 
-.table_1{
+.app_table{
     width:100%;
     height:100%;
-}
-
-.div2{
-   position:absolute;
-   left:120px;
-   top:30px;
-   width:810px;
 }
 
 button[class="btn btn-primary btn-lg btn-block"] {
@@ -50,45 +43,29 @@ button[class="btn btn-primary btn-lg btn-block"] {
     border-radius: 8px;
 }
 
-#tr{
-    border-radius: 10px;
+#title {
     color:white;
     background:DimGray;
 }
 
-div span{
+div span {
     font-size:20px;
 }
 
-.add{
-   position:absolute;
-   left:1120px;
-   top:90px;
-}
-.line1{
-   height:472px;
-   border-right:3px solid DimGray;
-   position:absolute;
-   left:1247px;
-   top:76px;
-}
-.line2{
-   width:843px;
-   border-bottom:3px solid DimGray;
-   position:absolute;
-   left:407px;
-   top:547px;
+.add {
+    position:absolute;
+    left:1120px;
+    top:90px;
 }
 
-
-#myline{
+#line_below_the_column_names {
     color:Black;
     border-bottom: 2px solid black;
     font-weight: bold;
     font-size:30px;
 }
 
-#mysize{
+#size_inside_table {
     font-style:italic;
     color:Gray;
     border: 0px solid grey;
@@ -97,7 +74,7 @@ div span{
     border-bottom-width:1px;
     font-weight: 500;
 }
-.layout_add{
+.layout_add {
     background: Silver;
     position:absolute;
     top:30px;
@@ -108,7 +85,7 @@ div span{
     border-radius:10px;
 }
 
-.form-control{
+.form-control {
     font-weight:bold;
     font-size:20px;
     margin-left:100px;
@@ -116,33 +93,34 @@ div span{
     width:400px;
     margin-top:3%;
 }
+
 .form-control::-webkit-input-placeholder { color: #6B6565; }
+
 input[type=date]::-webkit-datetime-edit {color: #6B6565;}
 
-#bt1_add{
+#bt_cancel {
     margin-top:2%;
     margin-right:4%;
     margin-bottom:3%;
    }
 
-
-#bt2_add{
+#bt_add {
     margin-top:2%;
     margin-right:16%;
     margin-bottom:3%;
 }
 
-#add_time{
+#add_time {
     margin-right:70%;
     color:SteelBlue;
     font-weight: 600;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
 }
 
-.department_delete{
+.department_delete {
     position: fixed;
     top: 25%;
     left: 30%;
@@ -153,42 +131,43 @@ a:hover{
     border-radius:10px;
 }
 
-#add_text{
+#delete_text {
     margin-left:33%;
     color:black;
     font-size:200%;
 }
 
-#bt1_del{
+#bt_del_cancel {
     margin-top:70px;
     margin-left:330px;
 }
 
-#bt2_del{
+#bt_confirm_add {
     margin-top:70px;
     margin-left:60px;
 }
 
-.picture{
+.delete_picture {
      position:absolute;
     top:17px;
     left:10px;
     size: 9x;
 }
 
-#time{
+#time {
     color:SteelBlue;
     margin-left:3%;
     font-weight: 600;
 }
 
-button[class="my btn btn-success"]{
+button[class="my btn btn-success"] {
     margin-top:1%;
     width:10%;
     margin-left:70%;
     -webkit-transition-duration: 0.1s;
     transition-duration: 0.2s;
 }
+
 button[class="my btn btn-success"]:hover {
     background-color: Gainsboro;
     color: Black;
