@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'department/css/department.css' %}">
+    <script type="text/javascript" src="{% static 'department/js/time.js' %}"></script>
   </head>
 
   <body>
@@ -16,7 +17,7 @@
 
       <form method="post">
         {% csrf_token %}
-        <span id="add_time">{{ time }}</span>
+        <span class="add_time" id="current_date_time_block"></span>
         <br>
         {{ form.name }}<br>
         <span>{{ error }}</span>

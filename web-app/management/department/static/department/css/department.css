@@ -110,8 +110,8 @@ input[type=date]::-webkit-datetime-edit {color: #6B6565;}
     margin-bottom:3%;
 }
 
-#add_time {
-    margin-right:70%;
+.add_time {
+    margin-right:80%;
     color:SteelBlue;
     font-weight: 600;
 }
@@ -154,7 +154,7 @@ a:hover {
     size: 9x;
 }
 
-#time {
+.time {
     color:SteelBlue;
     margin-left:3%;
     font-weight: 600;
