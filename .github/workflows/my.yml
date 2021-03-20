@@ -52,4 +52,4 @@ jobs:
         uses: coverallsapp/github-action@v1.1.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: ${{ github.workspace }}/web-app/coverage/lcov.info
+          path-to-lcov: "Django_project/web-app/management/coverage/lcov.info
