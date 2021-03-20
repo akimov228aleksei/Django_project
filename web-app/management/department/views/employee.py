@@ -7,30 +7,36 @@ from department.forms.employee import EmployeeForm
 
 
 class EmployeeHome(TemplateView):
+    """Class for rendering the home page of employee"""
 
     template_name = 'employee/employee.html'
 
     def get_context_data(self, **kwargs):
+
         context = super(EmployeeHome, self).get_context_data(**kwargs)
         context['employee'] = Employee.objects.all()
         return context
 
 
 class EmployeeAdd(View):
+    """Class for adding an employee"""
 
     form_class = EmployeeForm
     template_name = 'employee/employee_add.html'
 
     def get(self, request):
+
         form = self.form_class()
 
         return render(request, self.template_name, {'form': form})
 
     def post(self, request):
+
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
             return redirect('employee_home')
+
         error = "Error validation"
 
         return render(request, self.template_name, {'form': form, 'error': error})

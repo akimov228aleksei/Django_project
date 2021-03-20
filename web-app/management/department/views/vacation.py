@@ -7,30 +7,36 @@ from department.forms.vacation import VacationForm
 
 
 class VacationHome(TemplateView):
+    """Class for rendering the home page of vacation"""
 
     template_name = 'vacation/vacation.html'
 
     def get_context_data(self, **kwargs):
+
         context = super(VacationHome, self).get_context_data(**kwargs)
         context['vacation'] = Vacation.objects.all()
         return context
 
 
 class VacationAdd(View):
+    """Class for adding vacation"""
 
     form_class = VacationForm
     template_name = 'vacation/vacation_add.html'
 
     def get(self, request):
+
         form = self.form_class()
 
         return render(request, self.template_name, {'form': form})
 
     def post(self, request):
+
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
             return redirect('vacation_home')
+
         error = "Error validation"
 
         return render(request, self.template_name, {'form': form, 'error': error})

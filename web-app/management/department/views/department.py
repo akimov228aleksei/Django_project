@@ -7,54 +7,39 @@ from department.models.department import Department
 
 
 class DepartmentHome(TemplateView):
+    """Class for rendering the home page of departments"""
+
     template_name = 'department/department.html'
 
     def get_context_data(self, **kwargs):
+
         context = super(DepartmentHome, self).get_context_data(**kwargs)
         context['department'] = Department.objects.all()
         return context
 
 
 class DepartmentAdd(View):
+    """Class for adding a department"""
 
     form_class = DepartmentForm
     template_name = 'department/department_add.html'
 
     def get(self, request):
+
         form = self.form_class()
 
-        return render(request, self.template_name, {'form': form})
+        return render(request, self.template_name, {'form': form, 'temp': 'Hello'})
 
     def post(self, request):
+
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
             return redirect('home')
+
         error = "Error validation"
 
         return render(request, self.template_name, {'form': form, 'error': error})
-
-
-# def add(request):
-#    """Function to add a new entry"""
-#
-#   error = ''
-#
-#   if request.method == "POST":
-#      form = DepartmentForm(request.POST)
-#     if form.is_valid():
-#        form.save()
-#       return redirect('home')
-#  error = "Ошибка валидации"
-#
-#   form = DepartmentForm()
-#
-#   data = {
-#      'form': form,
-#     'error': error,
-# }
-#
-#   return render(request, 'department/department_add.html', data)
 
 
 class DepartmentUpdateView(UpdateView):
@@ -63,6 +48,12 @@ class DepartmentUpdateView(UpdateView):
     model = Department
     template_name = 'department/department_add.html'
     form_class = DepartmentForm
+
+    def get_context_data(self, **kwargs):
+
+        context = super(DepartmentUpdateView, self).get_context_data(**kwargs)
+        context['temp'] = 'Department.objects.all()'
+        return context
 
 
 class DepartmentDeleteView(DeleteView):
