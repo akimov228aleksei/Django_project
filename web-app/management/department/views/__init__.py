@@ -1,5 +1,5 @@
 """Package initialization"""
 
-from .department import department_home, add, DepartmentUpdateView, DepartmentDeleteView
-from .employee import employee_add, employee_home, EmployeeUpdateView, EmployeeDeleteView
-from .vacation import vacation_home, vacation_add, VacationUpdateView, VacationDeleteView
+from .department import DepartmentHome, DepartmentAdd, DepartmentUpdateView, DepartmentDeleteView
+from .employee import EmployeeHome, EmployeeAdd, EmployeeUpdateView, EmployeeDeleteView
+from .vacation import VacationHome, VacationAdd, VacationUpdateView, VacationDeleteView

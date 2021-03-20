@@ -1,44 +1,60 @@
 """Module containing application logic"""
 
 from django.shortcuts import render, redirect
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, TemplateView, View
 from department.forms.department import DepartmentForm
 from department.models.department import Department
 
 
+class DepartmentHome(TemplateView):
+    template_name = 'department/department.html'
 
-def department_home(request):
-    """Function to display the home page"""
-
-    department = Department.objects.all()
-
-    data = {
-        'department': department,
-    }
-
-    return render(request, 'department/department.html', data)
+    def get_context_data(self, **kwargs):
+        context = super(DepartmentHome, self).get_context_data(**kwargs)
+        context['department'] = Department.objects.all()
+        return context
 
 
-def add(request):
-    """Function to add a new entry"""
+class DepartmentAdd(View):
 
-    error = ''
+    form_class = DepartmentForm
+    template_name = 'department/department_add.html'
 
-    if request.method == "POST":
-        form = DepartmentForm(request.POST)
+    def get(self, request):
+        form = self.form_class()
+
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
             return redirect('home')
-        error = "Ошибка валидации"
+        error = "Error validation"
 
-    form = DepartmentForm()
+        return render(request, self.template_name, {'form': form, 'error': error})
 
-    data = {
-        'form': form,
-        'error': error,
-    }
 
-    return render(request, 'department/department_add.html', data)
+# def add(request):
+#    """Function to add a new entry"""
+#
+#   error = ''
+#
+#   if request.method == "POST":
+#      form = DepartmentForm(request.POST)
+#     if form.is_valid():
+#        form.save()
+#       return redirect('home')
+#  error = "Ошибка валидации"
+#
+#   form = DepartmentForm()
+#
+#   data = {
+#      'form': form,
+#     'error': error,
+# }
+#
+#   return render(request, 'department/department_add.html', data)
 
 
 class DepartmentUpdateView(UpdateView):

@@ -1,42 +1,39 @@
 """Module containing application logic"""
 
 from django.shortcuts import render, redirect
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, TemplateView, View
 from department.models.employee import Employee
 from department.forms.employee import EmployeeForm
 
 
-def employee_home(request):
-    """Function to display the home page"""
+class EmployeeHome(TemplateView):
 
-    employee = Employee.objects.all()
+    template_name = 'employee/employee.html'
 
-    data = {
-        'employee': employee,
-    }
-
-    return render(request, 'employee/employee.html', data)
+    def get_context_data(self, **kwargs):
+        context = super(EmployeeHome, self).get_context_data(**kwargs)
+        context['employee'] = Employee.objects.all()
+        return context
 
 
-def employee_add(request):
-    """Function to add a new entry"""
+class EmployeeAdd(View):
 
-    error = ''
-    form = EmployeeForm()
+    form_class = EmployeeForm
+    template_name = 'employee/employee_add.html'
 
-    if request.method == "POST":
-        form = EmployeeForm(request.POST)
+    def get(self, request):
+        form = self.form_class()
+
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
             return redirect('employee_home')
-        error = "Data entry error"
+        error = "Error validation"
 
-    data = {
-        'form': form,
-        'error': error,
-    }
-
-    return render(request, 'employee/employee_add.html', data)
+        return render(request, self.template_name, {'form': form, 'error': error})
 
 
 class EmployeeUpdateView(UpdateView):

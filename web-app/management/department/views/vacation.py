@@ -1,43 +1,39 @@
 """Module containing application logic"""
 
 from django.shortcuts import render, redirect
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, TemplateView, View
 from department.models.vacation import Vacation
 from department.forms.vacation import VacationForm
 
 
-def vacation_home(request):
-    """Function to display the home page"""
+class VacationHome(TemplateView):
 
-    vacation = Vacation.objects.all()
+    template_name = 'vacation/vacation.html'
 
-    data = {
-        'vacation': vacation,
-    }
-
-    return render(request, 'vacation/vacation.html', data)
+    def get_context_data(self, **kwargs):
+        context = super(VacationHome, self).get_context_data(**kwargs)
+        context['vacation'] = Vacation.objects.all()
+        return context
 
 
-def vacation_add(request):
-    """Function to add a new entry"""
+class VacationAdd(View):
 
-    error = ''
+    form_class = VacationForm
+    template_name = 'vacation/vacation_add.html'
 
-    if request.method == "POST":
-        form = VacationForm(request.POST)
+    def get(self, request):
+        form = self.form_class()
+
+        return render(request, self.template_name, {'form': form})
+
+    def post(self, request):
+        form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
             return redirect('vacation_home')
-        error = "Ошибка"
+        error = "Error validation"
 
-    form = VacationForm()
-
-    data = {
-        'error': error,
-        'form': form,
-    }
-
-    return render(request, 'vacation/vacation_add.html', data)
+        return render(request, self.template_name, {'form': form, 'error': error})
 
 
 class VacationUpdateView(UpdateView):
