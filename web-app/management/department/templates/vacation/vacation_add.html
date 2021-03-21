@@ -18,9 +18,9 @@
       <form method="post">
         {% csrf_token %}
         <span class="add_time" id="current_date_time_block"></span>
-        {{ form.name_vacation }}
-        <input type="date" class="form-control" name="date1">
-        <input type="date" class="form-control" name="date2">
+        <p class="field_names">Employee: {{ form.name_vacation }}</p>
+        <p class="field_names">Start: <input type="date" class="form-control" name="date1"></p>
+        <p class="field_names">End: <input type="date" class="form-control" name="date2"></p>
         <span>{{ error }}</span>
 
         <a href="{% url 'vacation_home' %}">

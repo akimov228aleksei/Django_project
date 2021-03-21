@@ -19,7 +19,8 @@
         {% csrf_token %}
         <span class="add_time" id="current_date_time_block"></span>
         <br>
-        {{ form.name }}<br>
+        <p class="field_names">Department: {{ form.name }}</p>
+        <br>
         <span>{{ error }}</span>
         <a href="{% url 'home' %}">
           <button id="bt_cancel" type="button" class="btn btn-danger">Cancel</button>
