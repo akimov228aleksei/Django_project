@@ -16,5 +16,4 @@ urlpatterns = [
     path('vacation/add', views.VacationAdd.as_view(), name='vacation_add'),
     path('vacation/<int:pk>/update', views.VacationUpdateView.as_view(), name='vacation-update'),
     path('vacation/<int:pk>/delete', views.VacationDeleteView.as_view(), name='vacation-delete')
-
 ]

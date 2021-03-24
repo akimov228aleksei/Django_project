@@ -15,6 +15,7 @@ class DepartmentHome(TemplateView):
 
         context = super(DepartmentHome, self).get_context_data(**kwargs)
         context['department'] = Department.objects.all()
+
         return context
 
 
@@ -48,12 +49,6 @@ class DepartmentUpdateView(UpdateView):
     model = Department
     template_name = 'department/department_add.html'
     form_class = DepartmentForm
-
-    def get_context_data(self, **kwargs):
-
-        context = super(DepartmentUpdateView, self).get_context_data(**kwargs)
-        context['temp'] = 'Department.objects.all()'
-        return context
 
 
 class DepartmentDeleteView(DeleteView):

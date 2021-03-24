@@ -7,13 +7,7 @@ from django.core.exceptions import ValidationError
 class Department(models.Model):
     """Class containing fields and methods of the model"""
 
-    def checking_name(value):
-        """check for duplicate department name"""
-
-        if Department.objects.filter(name=value):
-            raise ValidationError('Such a department already exists.')
-
-    name = models.CharField('Department:', max_length=30, validators=[checking_name])
+    name = models.CharField('Department:', max_length=30, unique=True)
 
     @property
     def salary(self):
