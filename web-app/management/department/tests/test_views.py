@@ -37,13 +37,16 @@ class DepartmentTest(TestCase):
 class EmployeeTest(TestCase):
 
     def setUp(self):
+        self.department = Department.objects.create(
+            name="some dep"
+        )
         self.employee = Employee.objects.create(
             name_employee="some employee",
+            dep=self.department,
             salary=100,
             position="some position",
             date=date(2020, 2, 3),
         )
-
 
     def test_update(self):
         response = self.client.post(reverse('employee-update', args='1'), {
@@ -52,7 +55,7 @@ class EmployeeTest(TestCase):
             'position': 'Updated position',
             'date': date(2020, 3, 7),
         })
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
 
     def test_delete(self):
         response = self.client.post(
