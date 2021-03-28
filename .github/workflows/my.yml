@@ -42,6 +42,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
+          cd web-app/management/department
           export DJANGO_SETTINGS_MODULE=management.settings
           python -m pip install -U pip
           pip install -r web-app/requirements.txt
