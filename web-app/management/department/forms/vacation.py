@@ -30,3 +30,13 @@ class VacationForm(ModelForm):
                 'placeholder': 'Enter a date of end...'
             }),
         }
+
+    def clean_date2(self):
+
+        date1 = self.cleaned_data["date1"]
+        date2 = self.cleaned_data["date2"]
+
+        if date2 <= date1:
+            self.add_error("date2", "End date is earlier than start date")
+
+        return date2

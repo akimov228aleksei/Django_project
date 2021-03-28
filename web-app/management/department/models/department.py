@@ -1,7 +1,6 @@
 """Module containing fields and methods of the model"""
 
 from django.db import models
-from django.core.exceptions import ValidationError
 
 
 class Department(models.Model):

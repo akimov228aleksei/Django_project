@@ -1,7 +1,5 @@
 """Module containing fields and methods of the model"""
 
-from datetime import date
-from django.core.exceptions import ValidationError
 from django.db import models
 from .department import Department
 
@@ -9,17 +7,11 @@ from .department import Department
 class Employee(models.Model):
     """Class containing fields and methods of the model"""
 
-    def no_future(value):
-        """Function that checks if a date is greater than today's date"""
-
-        if value > date.today():
-            raise ValidationError('Date cannot be in the future.')
-
     name_employee = models.CharField('Employee:', unique=True, max_length=30)
     dep = models.ForeignKey(Department, null=True, on_delete=models.SET_NULL)
-    salary = models.IntegerField('Salary:')
+    salary = models.PositiveIntegerField('Salary:')
     position = models.CharField('Position:', max_length=30)
-    date = models.DateField(validators=[no_future])
+    date = models.DateField('Date:')
 
     @staticmethod
     def get_absolute_url():

@@ -29,7 +29,7 @@ class DepartmentAdd(View):
 
         form = self.form_class()
 
-        return render(request, self.template_name, {'form': form, 'temp': 'Hello'})
+        return render(request, self.template_name, {'form': form})
 
     def post(self, request):
 

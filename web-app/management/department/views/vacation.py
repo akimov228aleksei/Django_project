@@ -37,7 +37,7 @@ class VacationAdd(View):
             form.save()
             return redirect('vacation_home')
 
-        error = "Error validation"
+        error = "Error validation "
 
         return render(request, self.template_name, {'form': form, 'error': error})
 
