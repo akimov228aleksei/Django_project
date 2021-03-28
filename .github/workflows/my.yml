@@ -51,6 +51,5 @@ jobs:
           coverage run --source='.' manage.py test management
           coveralls --service=github
       - name: Coveralls
-        uses: coverallsapp/github-action@v1.1.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
