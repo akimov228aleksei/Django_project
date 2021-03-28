@@ -50,6 +50,8 @@ jobs:
           export DJANGO_SETTINGS_MODULE=management.settings
           coverage run --source='.' -m pytest tests/
           coveralls
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Coveralls
         uses: coverallsapp/github-action@v1.1.2
         env:
