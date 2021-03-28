@@ -51,5 +51,5 @@ jobs:
           coverage run --source='.' -m pytest tests/
       - name: Coveralls
         uses: coverallsapp/github-action@v1.1.2
-        env:
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
