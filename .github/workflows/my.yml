@@ -49,7 +49,7 @@ jobs:
           cd web-app/management/department
           export DJANGO_SETTINGS_MODULE=management.settings
           coverage run --source='.' -m pytest tests/
-          coveralls
+          coveralls --service=gihtub
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Coveralls
