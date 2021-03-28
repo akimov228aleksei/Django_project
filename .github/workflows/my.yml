@@ -49,6 +49,7 @@ jobs:
           cd web-app/management/department
           export DJANGO_SETTINGS_MODULE=management.settings
           coverage run --source='.' -m pytest tests/
+          coveralls
       - name: Coveralls
         uses: coverallsapp/github-action@v1.1.2
         with:
