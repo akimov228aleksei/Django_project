@@ -47,7 +47,7 @@ jobs:
       - name: Run coverage
         run: |
           cd web-app/management
-          coverage run --source='.' manage.py test department
+          coverage run --source='.' -m pytest tests/
       - name: Coveralls
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
