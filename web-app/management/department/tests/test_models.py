@@ -38,6 +38,32 @@ class DepartmentTest(TestCase):
     def test_content(self):
         self.assertEqual(f'{self.department.name}', 'some department')
 
+    def test_salary(self):
+        SALARY = [100, 150, 200, 250, 300, 350, 400, 450, 500]
+        salary = []
+        for i in range(100, 1000, 100):
+            self.employee = Employee.objects.create(
+                name_employee=f"employee-{i}",
+                dep=self.department,
+                salary=i,
+                position="some position",
+                date=date(2020, 2, 3),
+            )
+            salary.append(self.department.salary)
+
+        self.assertEqual(SALARY, salary)
+
+    def test_amount(self):
+        for i in range(1, 10):
+            self.employee = Employee.objects.create(
+                name_employee=f"employee-{i}",
+                dep=self.department,
+                salary=100,
+                position="some position",
+                date=date(2020, 2, 3),
+            )
+            self.assertEqual(self.department.amount, i)
+
 
 class EmployeeTest(TestCase):
 
