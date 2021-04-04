@@ -9,7 +9,7 @@ class Employee(models.Model):
 
     name_employee = models.CharField('Employee:', unique=True, max_length=30)
     dep = models.ForeignKey(Department, null=True, on_delete=models.SET_NULL)
-    salary = models.PositiveIntegerField('Salary:')
+    salary = models.PositiveIntegerField('Salary:', default=0)
     position = models.CharField('Position:', max_length=30)
     date = models.DateField('Date:')
 
