@@ -1,0 +1,13 @@
+{% extends 'department/layout_delete.html' %}
+
+{% block title %}
+  Delete department
+{% endblock %}
+
+
+{% block content %}
+  <span id="delete_text">Confirm delete employee</span>
+  <a  href="{% url 'employee_home' %}">
+      <button id="bt_del_cancel" type="button" class="btn btn-danger">Cancel</button>
+  </a>
+{% endblock %}

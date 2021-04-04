@@ -1,0 +1,48 @@
+{% extends 'department/layout.html' %}
+
+{% block title %}
+  Vacation
+{% endblock %}
+
+{% block button %}
+  <a href="{% url 'vacation_add' %}">
+    <button type="button" class="my btn btn-success"> Add</button>
+  </a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content_layout">
+  <table class="table_layout" cellspacing="0">
+
+    {% if vacation %}
+      <tr id="line_below_the_column_names">
+        <td>Employee</td>
+        <td>Start</td>
+        <td>End</td>
+      </tr>
+
+      {% for el in vacation %}
+        <tr id="size_inside_table">
+          <td style="font-family:font-family:Andale Mono, monospace, fantasy;font-size:25px;font-weight: 700;font-style: normal">
+            {{ el.name_vacation }}
+          </td>
+          <td>{{ el.date1 }}</td>
+          <td>{{ el.date2 }}</td>
+          <td width="3%"><a href="{% url 'vacation-update' el.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+          <td width="3%"><a href="{% url 'vacation-delete' el.id %}"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
+      {% endfor %}
+
+    {% else %}
+        <br>
+        <p align="center" style="font-size: 30px">
+          No information available, please click the "Add" button to add data.
+        </p>
+
+    {% endif %}
+  </table>
+</div>
+
+{% endblock %}

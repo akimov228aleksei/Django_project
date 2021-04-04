@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'department/css/department.css' %}">
+  </head>
+
+  <body>
+    <div class="department_delete">
+
+      <form method="post">
+        {% csrf_token %}
+        <div class="delete_picture"><i class="fas fa-exclamation-circle fa-9x"></i></div>
+        {% block content %}
+        {% endblock %}
+        <button  class="btn btn-success" id="bt_confirm_add" type="submit" >Confirm</button>
+      </form>
+
+    </div>
+  </body>
+</html>

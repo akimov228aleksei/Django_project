@@ -1,0 +1,51 @@
+{% extends 'department/layout.html' %}
+
+{% block title %}
+  Employee
+{% endblock %}
+
+{% block button %}
+  <a href="{% url 'employee_add' %}">
+    <button type="button" class="my btn btn-success"> Add</button>
+  </a>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="content_layout">
+    <table class="table_layout" cellspacing="0">
+
+      {% if employee %}
+        <tr id="line_below_the_column_names">
+          <td>Employee</td>
+          <td>Department</td>
+          <td>Salary</td>
+          <td>Position</td>
+          <td>Date</td>
+        </tr>
+
+        {% for el in employee %}
+          <tr id="size_inside_table">
+            <td style="font-family:font-family:Andale Mono, monospace, fantasy;font-size:25px;font-weight: 700;font-style: normal">
+              {{ el.name_employee }}
+            </td>
+            <td>{{ el.dep }}</td>
+            <td>{{ el.salary }} $</td>
+            <td>{{ el.position }}</td>
+            <td>{{ el.date }}</td>
+            <td width="3%"><a href="{% url 'employee-update' el.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+            <td width="3%"><a href="{% url 'employee-delete' el.id %}"><i class="fas fa-trash-alt"></i></a></td>
+          </tr>
+        {% endfor %}
+
+      {% else %}
+        <br>
+        <p align="center" style="font-size: 30px">
+          No information available, please click the "Add" button to add data.
+        </p>
+
+      {% endif %}
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'department/css/department.css' %}">
+    <script type="text/javascript" src="{% static 'department/js/time.js' %}"></script>
+  </head>
+
+  <body>
+    <div class="app_location">
+
+      <table class="app_table" cellpadding="0">
+
+        <tr id="title">
+          <td></td>
+          <td style="border-right: 3px solid grey;" align="center" height="30">Employee management</td>
+        </tr>
+
+        <tr>
+          <td width="160"><a href="{% url 'home' %}">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Department</button></a>
+          </td>
+          <td style=" border-right: 3px solid grey;" rowspan="3">
+            <span class="time" id="current_date_time_block"></span>
+            {% block button %}{% endblock %}
+            {% block content %}{% endblock %}
+          </td>
+        </tr>
+
+        <tr>
+          <td width="160"><a href="{% url 'employee_home' %}">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Employee</button></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td width="160"><a href="{% url 'vacation_home' %}">
+            <button type="button" class="btn btn-primary btn-lg btn-block">Vacation</button></a>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+  </body>
+</html>

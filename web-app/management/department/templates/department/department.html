@@ -1,0 +1,51 @@
+{% extends 'department/layout.html' %}
+
+{% block title %}
+    Department
+{% endblock %}
+
+
+{% block button %}
+    <a href="{% url 'add' %}">
+        <button type="button" class="my btn btn-success"> Add</button>
+    </a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="content_layout">
+  <table class="table_layout" cellspacing="0">
+
+    {% if department %}
+
+      <tr id="line_below_the_column_names">
+        <td>Department</td>
+        <td>Salary</td>
+        <td>Amount</td>
+      </tr>
+
+      {% for el in department %}
+        <tr id="size_inside_table">
+        <td style="font-family:font-family:Andale Mono, monospace, fantasy;font-size:25px;font-weight: 700;font-style: normal">
+          {{ el.name }}
+        </td>
+        <td>{{ el.salary }} $</td>
+        <td>{{ el.amount }}</td>
+        <td width="3%"><a href="{% url 'department-update' el.id %}"><i class="fas fa-pencil-alt"></i></a></td>
+        <td width="3%"><a href="{% url 'department-delete' el.id %}"><i class="fas fa-trash-alt"></i></a></td>
+        </tr>
+      {% endfor %}
+
+    {% else %}
+      <br>
+      <p align="center" style="font-size: 30px">
+        No information available, please click the "Add" button to add data.
+      </p>
+
+    {% endif %}
+
+  </table>
+</div>
+
+{% endblock %}
