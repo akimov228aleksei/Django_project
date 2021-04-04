@@ -46,10 +46,9 @@ jobs:
           pip install -r web-app/requirements.txt
       - name: Run coverage
         run: |
-          cd web-app/management
-          coverage run --source='.' manage.py test management
-      - name: Coveralls
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path-to-lcov: "Django_project/web-app/management/coverage/lcov.info"
+          cd web-app/management/department
+          export DJANGO_SETTINGS_MODULE=management.settings
+          coverage run --source='.' -m pytest tests/
+          coveralls --service=github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
