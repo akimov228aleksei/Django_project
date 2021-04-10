@@ -4,3 +4,4 @@ pylint==2.7.2
 pytest-django==4.1.0
 flake8==3.9.0
 coveralls==3.0.1
+psycopg2==2.8.6
