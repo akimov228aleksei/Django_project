@@ -1,0 +1,29 @@
+[
+  {
+    "model": "department.department",
+    "pk": 1,
+    "fields": {
+      "name": "Some department"
+    }
+  },
+  {
+    "model": "department.employee",
+    "pk": 2,
+    "fields": {
+      "name_employee": "Some employee",
+      "dep": "1",
+      "salary": "1000",
+      "position": "Some position",
+      "date": "2020-01-01"
+    }
+  },
+  {
+    "model": "department.vacation",
+    "pk": 3,
+    "fields": {
+      "name_vacation": "Some employee",
+      "date1": "2020-01-01",
+      "date2": "2020-09-01"
+    }
+  }
+]
