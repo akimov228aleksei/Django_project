@@ -5,3 +5,4 @@ pytest-django==4.1.0
 flake8==3.9.0
 coveralls==3.0.1
 psycopg2==2.8.6
+djangorestframework==3.12.4
