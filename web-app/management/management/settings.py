@@ -88,8 +88,12 @@ DATABASES = {
 if os.environ.get('GITHUB_WORKFLOW'):
     DATABASES = {
         'default': {
-           'ENGINE': 'django.db.backends.mysql',
-           'NAME': 'test_db',
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'github_actions',
+            'USER': 'test',
+            'PASSWORD': 'test',
+            'HOST': 'localhost',
+            'PORT': '5432',
         }
     }
 
