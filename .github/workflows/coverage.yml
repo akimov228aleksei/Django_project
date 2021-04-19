@@ -35,15 +35,15 @@ jobs:
       matrix:
         python-version: [3.9]
 
-    services:
-      db:
-        image: postgres
-        env:
-          POSTGRES_DB: DjangoDB
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: 12345
-        ports:
-          - 5432:5432
+#    services:
+#      db:
+#        image: postgres
+#        env:
+#          POSTGRES_DB: DjangoDB
+#          POSTGRES_USER: postgres
+#          POSTGRES_PASSWORD: 12345
+#        ports:
+#          - 5432:5432
 
     steps:
       - uses: actions/checkout@v2
