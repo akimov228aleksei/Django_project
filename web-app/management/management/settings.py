@@ -85,17 +85,17 @@ DATABASES = {
         }
 }
 
-if os.environ.get('GITHUB_WORKFLOW'):
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'github_actions',
-            'USER': 'test',
-            'PASSWORD': 'test',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
+# if os.environ.get('GITHUB_WORKFLOW'):
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#             'NAME': 'github_actions',
+#             'USER': 'test',
+#             'PASSWORD': 'test',
+#             'HOST': 'localhost',
+#             'PORT': '5432',
+#         }
+#     }
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',

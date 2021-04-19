@@ -39,9 +39,9 @@ jobs:
       db:
         image: postgres
         env:
-          POSTGRES_DB: github_actions
-          POSTGRES_USER: test
-          POSTGRES_PASSWORD: test
+          POSTGRES_DB: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
         ports:
           - 5432:5432
 
