@@ -35,15 +35,15 @@ jobs:
       matrix:
         python-version: [3.9]
 
-#    services:
-#      db:
-#        image: postgres
-#        env:
-#          POSTGRES_DB: DjangoDB
-#          POSTGRES_USER: postgres
-#          POSTGRES_PASSWORD: 12345
-#        ports:
-#          - 5432:5432
+    services:
+      db:
+        image: postgres
+        env:
+          POSTGRES_DB: Django
+          POSTGRES_USER: some_user
+          POSTGRES_PASSWORD: some_password
+        ports:
+          - 5432:5432
 
     steps:
       - uses: actions/checkout@v2
@@ -58,7 +58,6 @@ jobs:
       - name: Run coverage
         run: |
           cd web-app/management/department
-          export POSTGRESQL_PASSWORD=12345
           export DJANGO_SETTINGS_MODULE=management.settings
           coverage run --source='.' -m pytest tests/
           coveralls --service=github
