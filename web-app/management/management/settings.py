@@ -82,8 +82,16 @@ DATABASES = {
         'PASSWORD': os.getenv('POSTGRESQL_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
-    }
+        }
 }
+
+if os.environ.get('GITHUB_WORKFLOW'):
+    DATABASES = {
+        'default': {
+           'ENGINE': 'django.db.backends.mysql',
+           'NAME': 'test_db',
+        }
+    }
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
