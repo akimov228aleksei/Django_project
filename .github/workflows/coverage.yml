@@ -58,8 +58,8 @@ jobs:
       - name: Run migrations
         run: |
           cd web-app/management/
-          export POSTGRESQL_ENGINE=django.db.backends.sqlite3
-          export POSTGRESQL_NAME=db.test_sqlite3
+          export DB_ENGINE=django.db.backends.sqlite3
+          export DB_NAME=db.test_sqlite3
           python manage.py migrate
       - name: Run coverage
         run: |
