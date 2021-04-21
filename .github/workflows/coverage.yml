@@ -58,8 +58,8 @@ jobs:
       - name: Export variables
         run: |
           cd web-app/management/department
-          export DB_ENGINE=django.db.backends.sqlite3
-          export DB_NAME=db.test_sqlite3
+          export DB_ENGINE='django.db.backends.sqlite3'
+          export DB_NAME='db.test_sqlite3'
           cd ..
           python manage.py migrate
       - name: Run coverage
