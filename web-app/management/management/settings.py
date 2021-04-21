@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'department',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -74,11 +76,20 @@ WSGI_APPLICATION = 'management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': os.getenv('DB_ENGINE'),
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
+        }
 }
 
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -121,3 +132,65 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
+
+
+# Setting up log files
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue'
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {pathname} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+        },
+        'production_file': {
+            'level': 'ERROR',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'prod.log'),
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 7,
+            'formatter': 'verbose',
+            'filters': ['require_debug_false'],
+        },
+        'debug_file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, 'dev.log'),
+            'maxBytes': 1024 * 1024 * 5,  # 5 MB
+            'backupCount': 7,
+            'formatter': 'verbose',
+            'filters': ['require_debug_true'],
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['debug_file'],
+            'level': "DEBUG",
+        },
+        '': {
+            'handlers': ['console', 'production_file', 'debug_file'],
+            'level': "DEBUG",
+        },
+    }
+}

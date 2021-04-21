@@ -46,8 +46,12 @@ jobs:
           pip install -r web-app/requirements.txt
       - name: Run coverage
         run: |
-          cd web-app/management/department
+          cd web-app/management
+          export DB_ENGINE='django.db.backends.sqlite3'
+          export DB_NAME='db.test_sqlite3'
           export DJANGO_SETTINGS_MODULE=management.settings
+          python manage.py migrate
+          cd department
           coverage run --source='.' -m pytest tests/
           coveralls --service=github
         env:
