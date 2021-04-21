@@ -55,13 +55,16 @@ jobs:
         run: |
           python -m pip install -U pip
           pip install -r web-app/requirements.txt
+      - name: Export variables
+        run: |
+            cd web-app/management/department
+            export DJANGO_SETTINGS_MODULE=management.settings
+            export DB_ENGINE=django.db.backends.sqlite3
+            export DB_NAME=db.test_sqlite3
+            cd web-app/management
+            python manage.py migrate
       - name: Run coverage
         run: |
-          cd web-app/management
-          export DJANGO_SETTINGS_MODULE=management.settings
-          export DB_ENGINE=django.db.backends.sqlite3
-          export DB_NAME=db.test_sqlite3
-          python manage.py migrate
           cd web-app/management/department
           coverage run --source='.' -m pytest tests/
           coveralls --service=github
