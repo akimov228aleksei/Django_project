@@ -34,17 +34,6 @@ jobs:
     strategy:
       matrix:
         python-version: [3.9]
-
-#    services:
-#      db:
-#        image: postgres
-#        env:
-#          POSTGRES_DB: 'postgres'
-#          POSTGRES_USER: 'postgres'
-#          POSTGRES_PASSWORD: 'postgres'
-#        ports:
-#          - 5432:5432
-
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python
@@ -63,7 +52,7 @@ jobs:
           export DJANGO_SETTINGS_MODULE=management.settings
           cd ..
           python manage.py migrate
-          cd web-app/management/department
+          cd department
           coverage run --source='.' -m pytest tests/
           coveralls --service=github
         env:
