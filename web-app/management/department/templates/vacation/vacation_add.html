@@ -19,9 +19,17 @@
         {% csrf_token %}
         <span class="add_time" id="current_date_time_block"></span>
         <p class="field_names">Employee: {{ form.name_vacation }}</p>
+          {% for error in form.name_vacation.errors %}
+              <p style="padding-right:3%">{{ error|escape }}</p>
+          {% endfor %}
         <p class="field_names">Start: <input type="date" class="form-control" name="date1"></p>
+          {% for error in form.date1.errors %}
+              <p style="padding-right:3%">{{ error|escape }}</p>
+          {% endfor %}
         <p class="field_names">End: <input type="date" class="form-control" name="date2"></p>
-        <span>{{ error }}</span>
+          {% for error in form.date2.errors %}
+              <p style="padding-right:3%">{{ error|escape }}</p>
+          {% endfor %}
 
         <a href="{% url 'vacation_home' %}">
             <button id="bt_cancel" type="button" class="btn btn-danger">Cancel</button>

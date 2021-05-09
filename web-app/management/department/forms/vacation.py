@@ -5,6 +5,11 @@ be displayed when adding a new vacation.
 
 from django.forms import ModelForm, Select, DateInput
 from department.models.vacation import Vacation
+from django.core.exceptions import ValidationError
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 class VacationForm(ModelForm):
@@ -37,6 +42,7 @@ class VacationForm(ModelForm):
         date2 = self.cleaned_data["date2"]
 
         if date2 <= date1:
-            self.add_error("date2", "End date is earlier than start date")
+            logger.info('Data has not been validated')
+            raise ValidationError("End date cannot be earlier than start date")
 
         return date2

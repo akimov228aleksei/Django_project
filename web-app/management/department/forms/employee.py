@@ -5,6 +5,12 @@ be displayed when adding a new employee.
 
 from django.forms import ModelForm, TextInput, Select, DateInput, NumberInput
 from department.models.employee import Employee
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext as _
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 class EmployeeForm(ModelForm):
@@ -43,3 +49,10 @@ class EmployeeForm(ModelForm):
                 'placeholder': 'Enter date... '
             })
         }
+
+    def clean_salary(self):
+
+        if len(str(self.cleaned_data["salary"])) > 15:
+            logger.info('Data has not been validated')
+            raise ValidationError('Salary must not exceed 15 characters')
+        return self.cleaned_data["salary"]

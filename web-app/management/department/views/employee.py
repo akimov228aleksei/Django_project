@@ -1,21 +1,28 @@
 """Module containing application logic"""
 
+import logging
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView, DeleteView, TemplateView, View
 from department.models.employee import Employee
 from department.forms.employee import EmployeeForm
+from department.DAO import EmployeeDAO
+from django.core.exceptions import ValidationError
 
 
-class EmployeeHome(TemplateView):
+logger = logging.getLogger(__name__)
+
+
+class EmployeeHome(View):
     """Class for rendering the home page of employee"""
 
     template_name = 'employee/employee.html'
 
-    def get_context_data(self, **kwargs):
+    def get(self, request):
 
-        context = super(EmployeeHome, self).get_context_data(**kwargs)
-        context['employee'] = Employee.objects.all()
-        return context
+        logger.info("Database query executed")
+        employee = EmployeeDAO.get_list()
+
+        return render(request, self.template_name, {'employee': employee})
 
 
 class EmployeeAdd(View):
@@ -35,11 +42,14 @@ class EmployeeAdd(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
+            logger.info("Save form")
             return redirect('employee_home')
 
-        error = "Error validation"
 
-        return render(request, self.template_name, {'form': form, 'error': error})
+        # error = form.non_field_errors()
+        # print(error)
+
+        return render(request, self.template_name, {'form': form})
 
 
 class EmployeeUpdateView(UpdateView):
