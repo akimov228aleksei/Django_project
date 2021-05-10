@@ -7,7 +7,7 @@ from .employee import Employee
 class Vacation(models.Model):
     """Class containing fields and methods of the model"""
 
-    name_vacation = models.ForeignKey(Employee, to_field='name_employee', on_delete=models.CASCADE)
+    name_vacation = models.ForeignKey(Employee, to_field='name_employee', on_delete=models.CASCADE, unique=True)
     date1 = models.DateField('Date start:')
     date2 = models.DateField('Date end:')
 

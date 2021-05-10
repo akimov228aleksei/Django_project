@@ -1,21 +1,27 @@
 """Module containing application logic"""
 
+import logging
 from django.shortcuts import render, redirect
 from django.views.generic import UpdateView, DeleteView, TemplateView, View
 from department.models.vacation import Vacation
 from department.forms.vacation import VacationForm
+from department.DAO import VacationDAO
 
 
-class VacationHome(TemplateView):
+logger = logging.getLogger(__name__)
+
+
+class VacationHome(View):
     """Class for rendering the home page of vacation"""
 
     template_name = 'vacation/vacation.html'
 
-    def get_context_data(self, **kwargs):
+    def get(self, request):
 
-        context = super(VacationHome, self).get_context_data(**kwargs)
-        context['vacation'] = Vacation.objects.all()
-        return context
+        logger.info("Database query executed")
+        vacation = VacationDAO.get_list()
+
+        return render(request, self.template_name, {'vacation': vacation})
 
 
 class VacationAdd(View):
@@ -35,11 +41,10 @@ class VacationAdd(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
+            logger.info("Database query executed")
             return redirect('vacation_home')
 
-        error = "Error validation "
-
-        return render(request, self.template_name, {'form': form, 'error': error})
+        return render(request, self.template_name, {'form': form})
 
 
 class VacationUpdateView(UpdateView):

@@ -4,8 +4,9 @@
 
 ### Run 
 
-To run the application, go to the settings.py file and in the DATABASES line change the database settings for your database,
-next write the following while in the folder where the manage.py file is located:
+To run the application, set the environment variables according to your database, 
+then go to the folder where manage.py is located and do the following:
+
 
 ```
 python manage.py makemigrations
@@ -19,7 +20,7 @@ python manage.py runserver
 
 To run the tests, do the following while in the folder with the manage.py file:
 ```
-python manage.py test
+python manage.py test --settings=department.tests.test_settings
 ```
 ---
 

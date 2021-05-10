@@ -1,0 +1,181 @@
+body {
+    background:Gainsboro;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content_layout {
+    overflow:auto;
+    width:100%;
+    height: 91%;
+    margin-top:0%;
+    border-bottom: 2px solid grey;
+}
+
+.app_location {
+    position: fixed;
+    top: 5%;
+    left: 3%;
+    width:94%;
+    height: 82%;
+
+}
+.table_layout {
+    margin-top:1%;
+    margin-left:2%;
+    width:98%;
+}
+
+
+.app_table{
+    width:100%;
+    height:100%;
+}
+
+button[class="btn btn-primary btn-lg btn-block"] {
+    background: grey;
+    padding:0;
+    width:100%;
+    height:100%;
+    border-radius: 8px;
+}
+
+#title {
+    color:white;
+    background:DimGray;
+}
+
+div span {
+    font-size:20px;
+}
+
+.add {
+    position:absolute;
+    left:1120px;
+    top:90px;
+}
+
+#line_below_the_column_names {
+    color:Black;
+    border-bottom: 2px solid black;
+    font-weight: bold;
+    font-size:30px;
+}
+
+#size_inside_table {
+    font-style:italic;
+    color:Gray;
+    border: 0px solid grey;
+    font-size:20px;
+    height:50px;
+    border-bottom-width:1px;
+    font-weight: 500;
+}
+.layout_add {
+    background: Silver;
+    position:absolute;
+    top:30px;
+    left:430px;
+    border: 3px solid black;
+    width:600px;
+    text-align:right;
+    border-radius:10px;
+}
+
+.form-control {
+    display: inline;
+    font-weight:bold;
+    font-size:20px;
+    margin-right: 2%;
+    margin-left: 6%;
+    width:65%;
+    margin-top:3%;
+}
+
+.field_names {
+    color: #4E4040;
+    font-size: 22px;
+    font-weight:bold;
+}
+
+.form-control::-webkit-input-placeholder { color: #6B6565; font-weight: 300; }
+
+input[type=date]::-webkit-datetime-edit {color: #6B6565;}
+
+#bt_cancel {
+    margin-top:2%;
+    margin-right:4%;
+    margin-bottom:3%;
+   }
+
+#bt_add {
+    margin-top:2%;
+    margin-right:16%;
+    margin-bottom:3%;
+}
+
+.add_time {
+    margin-right:80%;
+    color:SteelBlue;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.department_delete {
+    position: fixed;
+    top: 25%;
+    left: 30%;
+    width: 40%;
+    height:25%;
+    background: Silver;
+    border: 3px solid black;
+    border-radius:10px;
+}
+
+#delete_text {
+    margin-left:33%;
+    color:black;
+    font-size:200%;
+}
+
+#bt_del_cancel {
+    margin-top:70px;
+    margin-left:330px;
+}
+
+#bt_confirm_add {
+    margin-top:70px;
+    margin-left:60px;
+}
+
+.delete_picture {
+     position:absolute;
+    top:17px;
+    left:10px;
+    size: 9x;
+}
+
+.time {
+    color:SteelBlue;
+    margin-left:3%;
+    font-weight: 600;
+}
+
+button[class="my btn btn-success"] {
+    margin-top:1%;
+    width:10%;
+    margin-left:70%;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.2s;
+}
+
+button[class="my btn btn-success"]:hover {
+    background-color: Gainsboro;
+    color: Black;
+}
