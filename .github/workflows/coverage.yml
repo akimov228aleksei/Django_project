@@ -18,9 +18,9 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        cd web-app
         python -m pip install -U pip
         pip install -r requirements.txt
+        cd web-app
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
@@ -42,8 +42,10 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
+          cd ..
           python -m pip install -U pip
           pip install -r web-app/requirements.txt
+          cd web-app
       - name: Run coverage
         run: |
           cd web-app/management
