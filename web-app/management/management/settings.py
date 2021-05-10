@@ -21,11 +21,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'o^d8_p(nwk3zg8c7cnw)#-ndl!)em$@sxq8_)=#$wn-v%phbn@'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
-
 
 # Application definition
 
@@ -129,8 +124,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-
 
 # Setting up log files
 
@@ -188,3 +181,8 @@ LOGGING = {
         },
     }
 }
+
+try:
+    from .dev_settings import *
+except ImportError:
+    from .prod_settings import *
