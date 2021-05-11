@@ -13,39 +13,39 @@
   </head>
 
   <body>
-    <div class="app_location">
+      <div class="app_location">
 
-      <table class="app_table" cellpadding="0">
+        <table class="app_table" cellpadding="0">
 
-        <tr id="title">
-          <td></td>
-          <td style="border-right: 3px solid grey;" align="center" height="30">Employee management</td>
-        </tr>
+          <tr id="title">
+            <td></td>
+            <td style="border-right: 3px solid grey;" align="center" height="30">Employee management</td>
+          </tr>
 
-        <tr>
-          <td width="160"><a href="{% url 'home' %}">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Department</button></a>
-          </td>
-          <td style="border-right: 3px solid grey; border-bottom: 2px solid grey;" rowspan="3">
-            <span class="time" id="current_date_time_block"></span>
-            {% block button %}{% endblock %}
-            {% block content %}{% endblock %}
-          </td>
-        </tr>
+          <tr>
+            <td width="160"><a href="{% url 'home' %}">
+              <button type="button" class="btn btn-primary btn-lg btn-block">Department</button></a>
+            </td>
+            <td style="border-right: 3px solid grey; border-bottom: 2px solid grey;" rowspan="3">
+              <span class="time" id="current_date_time_block"></span>
+              {% block button %}{% endblock %}
+              {% block content %}{% endblock %}
+            </td>
+          </tr>
 
-        <tr>
-          <td width="160"><a href="{% url 'employee_home' %}">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Employee</button></a>
-          </td>
-        </tr>
+          <tr>
+            <td width="160"><a href="{% url 'employee_home' %}">
+              <button type="button" class="btn btn-primary btn-lg btn-block">Employee</button></a>
+            </td>
+          </tr>
 
-        <tr>
-          <td width="160"><a href="{% url 'vacation_home' %}">
-            <button type="button" class="btn btn-primary btn-lg btn-block">Vacation</button></a>
-          </td>
-        </tr>
+          <tr>
+            <td width="160"><a href="{% url 'vacation_home' %}">
+              <button type="button" class="btn btn-primary btn-lg btn-block">Vacation</button></a>
+            </td>
+          </tr>
 
-      </table>
-    </div>
+        </table>
+      </div>
   </body>
 </html>
